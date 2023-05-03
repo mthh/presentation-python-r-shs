@@ -14,6 +14,7 @@ Au cours de cette présentation, un même jeu de données sera analysé à l'aid
 
 ![](images/tools-gca0e8252a_640.jpg)
 
+- Introduction - pourquoi comparer R et Python ?
 - Présentation historique des deux langages
 - Présentation comparée des écosystèmes (distribution, IDE, *package manager*, etc.)
 - Explorer un jeu de données en R et en Python (comparaison de l'approche générale, différences de syntaxe et de philosophie entre les langages, etc.)
