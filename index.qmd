@@ -1,0 +1,158 @@
+---
+title: "Analyse comparative Python / R pour les SHS"
+author: "Matthieu Viry"
+subtitle: 16 mai 2023
+format:
+  revealjs:
+    embed-resources: true
+css: ['style.css']
+prefer-html: true
+---
+
+```{python}
+import pandas as pd
+print("aaa")
+```
+
+## Load the data
+
+Load the data from the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md) repository:
+
+```{r}
+#| label: read-data
+#| echo: true
+#| message: false
+#| cache: true
+lemurs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-24/lemur_data.csv')
+```
+## Data wrangling
+
+Filter the data to only look at adult male Collared Brown Lemurs, and extract only the age and weight columns:
+
+```{r}
+#| label: wrangling
+#| echo: true
+#| message: false
+#| output-location: slide
+library(dplyr)
+library(knitr)
+lemur_data <- lemurs %>% 
+  filter(taxon == "ECOL",
+         sex == "M",
+         age_category == "adult") %>% 
+  select(c(age_at_wt_mo, weight_g)) %>% 
+  rename(Age = age_at_wt_mo, 
+         Weight = weight_g)
+kable(head(lemur_data))
+```
+
+## Modelling
+
+Fit a linear model using Python:
+
+```{python}
+#| label: modelling
+#| echo: true
+#| message: false
+lemur_data_py = r.lemur_data
+
+import statsmodels.api as sm
+y = lemur_data_py[["Weight"]]
+x = lemur_data_py[["Age"]]
+x = sm.add_constant(x)
+mod = sm.OLS(y, x).fit()
+lemur_data_py["Predicted"] = mod.predict(x)
+lemur_data_py["Residuals"] = mod.resid
+```
+
+## Plot the residuals
+
+```{r}
+#| label: plotting
+#| echo: true
+#| output-location: slide
+#| message: false
+#| fig-align: center
+#| fig-alt: "Scatter plot of predicted and residual values for the fitted linear model."
+library(reticulate)
+library(ggplot2)
+lemur_residuals <- py$lemur_data_py
+ggplot(data = lemur_residuals,
+       mapping = aes(x = Predicted,
+                     y = Residuals)) +
+  geom_point(colour = "#2F4F4F") +
+  geom_hline(yintercept = 0,
+             colour = "red") +
+  theme(panel.background = element_rect(fill = "#eaf2f2",
+                                        colour = "#eaf2f2"),
+        plot.background = element_rect(fill = "#eaf2f2",
+                                       colour = "#eaf2f2"))
+```
+
+## A
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+#### Depuis R
+
+```{r}
+#| echo: true
+library(dplyr)
+library(readr)
+
+chipo <- read_tsv(
+    'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv')
+
+head(chipo)
+```
+
+:::
+
+::: {.column width="50%"}
+
+
+#### Depuis Python
+
+```{python}
+#| echo: true
+import pandas as pd
+pd.set_option('display.max_columns', 5)
+
+chipo = pd.read_csv(
+    'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv',
+    sep = '\t',
+)
+
+chipo.head().to_html()
+```
+
+:::
+
+::::
+
+
+Plusieurs éléments peuvent être notés dès maintenant,
+que ce soit concernant l'import des bibliothèques utilisées que concernant le
+type de programmation mis en oeuvre dans les deux langages.
+
+La syntaxe de R est plutôt *fonctionnelle* alors que la syntaxe de python est plutôt *orientée-objet* (on dit d'ailleurs souvent que tout est *objet* en Python).
+
+
+## Quoi retenir ?
+
+
+
+- R a plus de fonction natives dédiés à la statistique
+
+- Python a ... alors que R a ...
+
+- De manière générale, R est meilleur pour les statistiques
+(ça ne veut pas dire que Python est mauvais pour autant ;))
+
+- Il est généralement plus simple de faire des tâches non-statistiques en Python
+
+## Conclusion
+
+Utiliser le langage qui vous plait le plus... prendre du plaisir en développant est important !
