@@ -10,9 +10,234 @@ prefer-html: true
 ---
 
 ```{python}
+#! cache: true
 import pandas as pd
 print("aaa")
 ```
+
+# Introduction
+
+## Pourquoi comparer Python et R
+
+-
+
+# Historique et comparaison des langages sur le papier...
+
+## Python
+
+- Langage créé à la fin des années 80 - première version publique sortie en 1991.
+
+- 
+
+
+## R
+
+## Python
+
+## R
+
+# Présentation comparée des écosystèmes
+
+## Fonctionnalités natives / Python
+
+## Fonctionnalités natives / R
+
+
+## Packages additionnels / Python
+
+**PyPI** (Python Package Index) :
+
+## Packages additionnels / R
+
+**CRAN** : index de packages supervisé
+
+## Documentation / Python
+
+Un point fort de Python est sa documentation officielle, qui contient tout le nécessaire pour utiliser le langage de manière proactive (tutoriel, référence de l'ensemble des fonctions / objets de tous les modules de la bibliothèque standard, etc.) et qui est mise à disposition dans plusieurs langues (Anglais, Français, Espagnol, Coréen, Japonais, Chinois, etc.)
+
+## Documentation / R
+
+La documentation de R, tout aussi complète qu'elle soit est moins *user-friendly* et n'est disponible qu'en anglais.
+
+# En terme de syntaxe ça donne quoi ?
+
+## Python et l'indentation du code...
+
+<br>
+
+```{python}
+#| error: true
+#| echo: true
+#| message: true
+#| cache: true
+my_list = [1, 2, 3]
+
+for item in my_list:
+    if item % 2 == 0:
+        print('even')
+    else:
+    print('odd')
+```
+
+## Python et l'indentation du code...
+
+<br>
+
+```{python}
+#| error: true
+#| echo: true
+#| message: true
+#| cache: true
+my_list = [1, 2, 3]
+
+for item in my_list:
+    if item % 2 == 0:
+        print('even')
+    else:
+        print('odd')
+```
+
+## Python et l'indentation du code...
+
+- Respecter les règles d'identations est nécessaire (comprendre *obligatoire*) en Python.
+
+- Ce n'est pas une *contrainte* lors d'une session de travail car les IDE guident la position du curseur.
+
+- Cette indentation a un rôle direct sur le contrôle du flux d'éxecution.
+
+- Elle permet notamment d'éviter l'utilisation d'accolades (*curly brackets*) pour délimiter les blocs et de point-virgules pour délimiter les instructions.
+
+## Python et l'indentation du code...
+
+<br>
+
+Le code qui suit est volontairement incorrect mais ne génère pas d'erreur lors de l'éxecution :
+
+```{python}
+#| echo: true
+li1 = [1, 2, 3, 4, 5, 6]
+li2 = [4, 20, 31, 87, 123, 621]
+
+# Additionnons les deux listes, éléments par éléments,
+# et stockons chaque résultat dans une nouvelle liste
+result = []
+
+for item1, item2 in zip(li1, li2):
+    new_item = item1 + item2
+result.append(new_item)
+
+print(result)
+```
+
+## Python et l'indentation du code...
+
+<br>
+
+Une fois l'indentation corrigée...
+
+```{python}
+#| echo: true
+li1 = [1, 2, 3, 4, 5, 6]
+li2 = [4, 20, 31, 87, 123, 621]
+
+# Additionnons les deux listes, éléments par éléments,
+# et stockons chaque résultat dans une nouvelle liste
+result = []
+
+for item1, item2 in zip(li1, li2):
+    new_item = item1 + item2
+    result.append(new_item)
+
+print(result)
+```
+
+## R, accolades et `pipe`s
+
+À l'inverse de Python, R utilise des accolades pour délimiter les blocs d'instructions et ne se soucie donc par de l'indentation (on veillera quand même être cohérent afin de faciliter la lecture du code)
+
+```{r}
+#| echo: true
+my_list <- list(1, 2, 3)
+
+for (item in my_list) {
+  if (item %% 2 == 0) {
+    print("even")
+  } else {
+    print("odd")
+  }
+}
+```
+
+## R, accolades et `pipe`s
+
+R propose par ailleurs un opérateur `pipe` pour enchaîner les commandes, permettant ainsi
+de remplacer une expression telle que 
+
+```{r}
+#| echo: true
+exp(sqrt(log(12, base = 10)))
+```
+
+par 
+
+```{r}
+#| echo: true
+12 |> log(base = 10) |> sqrt() |> exp()
+```
+
+::: {.notes}
+Il s'agit d'une question de gout, et ça dépend aussi des expressions à enchaîner...dans l'exemple actuel je préfère la version sans l'opérateur pipe, que je trouve non ambigue et facilement lisible par un public venant de n'importe quel langage...
+:::
+
+# *Data structures* natives
+
+:::{.small}
+*Les structures de données sont les éléments fondamentaux autour desquels vous construisez vos programmes. Chaque structure de données fournit une manière particulière d'organiser les données afin d'y accéder efficacement.*
+:::
+
+## Python
+
+Python est livré avec un ensemble complet de structures de données dans sa bibliothèque standard : `dict` (tableau associatif), `tuple` (un conteneur immuable), `list` (tableau dynamique mutable), `array` (tableau typé de base), etc.
+
+
+```{python}
+#| echo: true
+my_dict = { 'john': 32, 'jane': 27, 'jack': 30 }
+```
+
+
+## Python *(classes)*
+
+Comme il s'agit d'un langage orienté-objet, il est également possible de définir des classes, permettant de facilement modéliser des catégories d'objets...
+
+```{python}
+#| echo: true
+class Point:
+    def __init__(self, x, y):
+      self.x = x
+      self.y = y
+
+    def distance(self, other):
+      return (
+        (other.x - self.x) ** 2 + (other.y - self.y) ** 2
+      ) ** 0.5
+```
+
+## Python *(classes)*
+
+Instanciation et utilisation :
+
+```{python}
+#| echo: true
+p1 = Point(2, 6)
+p2 = Point(9, 9)
+
+print('Distance = ', p1.distance(p2))
+```
+
+
+
+## R
 
 ## Load the data
 
@@ -152,6 +377,8 @@ La syntaxe de R est plutôt *fonctionnelle* alors que la syntaxe de python est p
 (ça ne veut pas dire que Python est mauvais pour autant ;))
 
 - Il est généralement plus simple de faire des tâches non-statistiques en Python
+
+- Voir https://www.tiobe.com/tiobe-index/
 
 ## Conclusion
 
