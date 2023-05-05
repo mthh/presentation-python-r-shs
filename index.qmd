@@ -239,6 +239,51 @@ print('Distance = ', p1.distance(p2))
 
 ## R
 
+
+# La syntaxe c'est bien... et la sémantique qui y est associée ?
+
+## R
+
+Sémantique *copy-on-modify* :
+
+```{r}
+my_list <- c(1, 2, 5)
+other_list <- my_list
+# Pour l'instant 'other_list' et 'my_list' pointent vers le même objet..
+
+# Modifions un élément de 'other_list'..
+other_list[3] <- 11
+# une copie de 'my_list' a été faite, son 3 élément a été modifié puis 'other_list' s'est mis à pointer vers cette copie
+
+print(my_list)
+print(other_list)
+```
+
+Pour en savoir plus sur ce point [*Advanced R* (Hadley Wickham)](https://bookdown.dongzhuoer.com/hadley/adv-r/copy-on-modify.html)
+
+## Python
+
+Sémantique *pass-by-assignment* et différence en types muables et immuables :
+
+```{python}
+# le type list est muable
+a = [1, 3, 5]
+b = a # 'a' et 'b' pointent vers le même objet
+
+b[2] = 11 # Modifie l'objet vers lequel pointe 'b' qui est également celui vers lequel pointe 'a'
+```
+
+```{python}
+i = 5 # les entiers sont immuables
+j = i
+i = i + 1 # la valeur 5 ne peut pas être modifiée, un nouvel objet est créé ici
+
+print(i) # 6
+print(j) # 7
+```
+
+Pour en savoir plus sur ce point : [Documentation officielle -  Questions fréquemment posées sur Python](https://docs.python.org/fr/3/faq/programming.html#why-did-changing-list-y-also-change-list-x)
+
 ## Load the data
 
 Load the data from the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md) repository:
