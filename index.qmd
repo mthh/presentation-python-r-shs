@@ -4,7 +4,15 @@ author: "Matthieu Viry"
 subtitle: 16 mai 2023
 format:
   revealjs:
-    embed-resources: true
+    embed-resources: false
+    slide-number: true
+    show-slide-number: all
+    chalkboard: true
+    logo: images/logos-footer.png
+title-slide-attributes: 
+  data-background-image: images/logos-footer.png
+  data-background-size: 42%
+  data-background-position: 50% 90%
 css: ['style.css']
 prefer-html: true
 ---
@@ -43,21 +51,69 @@ print("aaa")
 ## Fonctionnalités natives / R
 
 
-## Packages additionnels / Python
+## Packages additionnels
 
-**PyPI** (Python Package Index) :
+Les deux langages proposent d'installer des packages additionnels, et, pour chacun des deux langages, des outils ainsi qu'un index de packages installables existent.
 
-## Packages additionnels / R
+Des différences importantes existent toutefois dans la philosophie relative à l'installation et à la publication de ces packages.
 
-**CRAN** : index de packages supervisé
+## Packages additionnels / Installation en Python
+
+En Python, on installera ces packages en utilisant un outil appelé `pip`, avec des commandes comme :
+
+```bash
+pip install numpy
+```
+
+ou
+
+```bash
+python -m pip install numpy
+```
+
+## Packages additionnels / Installation en R
+
+À l'inverse, en R on installera les packages au sein de son environnement de travail actuel, depuis l'interpréteur R :
+
+```R
+install.packages('ggplot2')
+```
+
+## Packages additionnels / PyPI (Python)
+
+<img src="images/logo-pypi.small.svg" style="width: 200px !important; height: auto !important" />
+
+- **PyPI** (Python Package Index) / [https://pypi.org/](pypi.org) :
+
+- 453 395 packages disponibles (4 451 674 versions)
+
+-
+
+## Packages additionnels / CRAN (R)
+
+- **CRAN** (The Comprehensive R Archive Network) / [https://cran.r-project.org/](cran.r-project.org) : index de packages supervisé
+
+- 19495 packages disponible (au 11/05/2023)
+
+-
 
 ## Documentation / Python
 
-Un point fort de Python est sa documentation officielle, qui contient tout le nécessaire pour utiliser le langage de manière proactive (tutoriel, référence de l'ensemble des fonctions / objets de tous les modules de la bibliothèque standard, etc.) et qui est mise à disposition dans plusieurs langues (Anglais, Français, Espagnol, Coréen, Japonais, Chinois, etc.)
+Un point fort de Python est sa documentation officielle, qui contient tout le nécessaire pour utiliser le langage de manière proactive
+(tutoriel, référence de l'ensemble des fonctions / objets de tous les modules de la bibliothèque standard, etc.)
+et qui est mise à disposition dans plusieurs langues (Anglais, Français, Espagnol, Coréen, Japonais, Chinois, etc.).
+
+Il n'existe toutefois pas un seul standard pour consulter la documentation des différents modules additionnels Python
+(cf. https://matplotlib.org/stable/api/index, https://pandas.pydata.org/docs/reference/index.html#api).
+
+<img src="images/python-documentation.png" style="width: 80% !important;" />
 
 ## Documentation / R
 
 La documentation de R, tout aussi complète qu'elle soit est moins *user-friendly* et n'est disponible qu'en anglais.
+
+En revanche, à l'inverse de Python, la documentation de tous les packages additionnels publiés sur le CRAN est consultable dans un même formalisme
+(en PDF depuis le site du CRAN, ou via des sites Web comme https://www.rdocumentation.org/).
 
 # En terme de syntaxe ça donne quoi ?
 
@@ -284,6 +340,66 @@ print(j) # 7
 
 Pour en savoir plus sur ce point : [Documentation officielle -  Questions fréquemment posées sur Python](https://docs.python.org/fr/3/faq/programming.html#why-did-changing-list-y-also-change-list-x)
 
+
+## Explorer un jeu de données...
+
+Nous allons voir, dans chacun des deux langages, comment ouvrir et préparer un jeu de données pour y effectuer plusieurs traitements courants :
+- analyse statistique
+- traitement automatique de la langue naturelle
+-
+-
+
+## A
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+#### Depuis R
+
+```{r}
+#| echo: true
+library(dplyr)
+library(readr)
+
+chipo <- read_tsv(
+    'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv')
+
+head(chipo)
+```
+
+:::
+
+::: {.column width="50%"}
+
+
+#### Depuis Python
+
+```{python}
+#| echo: true
+import pandas as pd
+pd.set_option('display.max_columns', 5)
+
+chipo = pd.read_csv(
+    'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv',
+    sep = '\t',
+)
+
+chipo.head().to_html()
+```
+
+:::
+
+::::
+
+
+Plusieurs éléments peuvent être notés dès maintenant,
+que ce soit concernant l'import des bibliothèques utilisées que concernant le
+type de programmation mis en oeuvre dans les deux langages.
+
+La syntaxe de R est plutôt *fonctionnelle* alors que la syntaxe de python est plutôt *orientée-objet* (on dit d'ailleurs souvent que tout est *objet* en Python).
+
+
 ## Load the data
 
 Load the data from the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md) repository:
@@ -359,62 +475,45 @@ ggplot(data = lemur_residuals,
                                        colour = "#eaf2f2"))
 ```
 
-## A
+## Programmer pour autres chose que la science des données...
 
-:::: {.columns}
+Quand on prend gout à la programmation, il n'est pas rare de vouloir automatiser différents types de tâches
+(opération de maintenance sur une machine perso. ou sur un serveur, 
 
-::: {.column width="50%"}
+### Python
 
-#### Depuis R
+Un des points sur lequel Python est particulièrement performant ... communication avec l'OS...
 
-```{r}
-#| echo: true
-library(dplyr)
-library(readr)
-
-chipo <- read_tsv(
-    'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv')
-
-head(chipo)
-```
-
-:::
-
-::: {.column width="50%"}
+### R
 
 
-#### Depuis Python
 
-```{python}
-#| echo: true
-import pandas as pd
-pd.set_option('display.max_columns', 5)
+## Valoriser ses résultats
 
-chipo = pd.read_csv(
-    'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv',
-    sep = '\t',
-)
+Plusieurs manières de valoriser les scripts écrits dans les deux langages ainsi que les résultats obtenues existent :
+- programmation lettrée
+- publication sur le Web
+- développement d'une application Web
+- développement d'une application mobile, etc.
 
-chipo.head().to_html()
-```
-
-:::
-
-::::
+### *Notebooks* et programmation lettrée
 
 
-Plusieurs éléments peuvent être notés dès maintenant,
-que ce soit concernant l'import des bibliothèques utilisées que concernant le
-type de programmation mis en oeuvre dans les deux langages.
+### Publication sur le Web
 
-La syntaxe de R est plutôt *fonctionnelle* alors que la syntaxe de python est plutôt *orientée-objet* (on dit d'ailleurs souvent que tout est *objet* en Python).
+
+### Développement d'application Web
+
+
+### Développement d'application mobiles (Android / iOS)
+
+
+[https://beeware.org/](beeware.org)
 
 
 ## Quoi retenir ?
 
-
-
-- R a plus de fonction natives dédiés à la statistique
+- R a plus de fonctions natives (et probablement de meilleurs packages) dédiés à la statistique
 
 - Python a ... alors que R a ...
 
@@ -424,6 +523,50 @@ La syntaxe de R est plutôt *fonctionnelle* alors que la syntaxe de python est p
 - Il est généralement plus simple de faire des tâches non-statistiques en Python
 
 - Voir https://www.tiobe.com/tiobe-index/
+
+## Synthèse de la comparaison
+
+:::{.small}
+
++-----------------------------------+------------------------------+--------------------+
+| *Item comparé*                    | **Python**                   | **R**              |
++===================================+==============================+====================+
+| Documentation                     | **Win**                      |                    |
++-----------------------------------+------------------------------+--------------------+
+| Élégance / syntaxe                | **Win**                      |                    |
++-----------------------------------+------------------------------+--------------------+
+| OOP, metaprogramming              | **Win**                      |                    |
++-----------------------------------+------------------------------+--------------------+
+| Packages additionnels             | *Tie*                        |  *Tie*             |
++-----------------------------------+------------------------------+--------------------+
+| Documentation                     |                              |  **Win**           |
+| Packages additionnels             |                              |                    |
++-----------------------------------+------------------------------+--------------------+
+| Prix du ticket d'entrée           | *Tie*                        |  *Tie*             |
++-----------------------------------+------------------------------+--------------------+
+| Learning curve                    | *Tie*                        |  *Tie*             |
++-----------------------------------+------------------------------+--------------------+
+| Web scrapping                     | Win                          |                    |
++-----------------------------------+------------------------------+--------------------+
+| Statistique                       |                              |  **Win**           |
++-----------------------------------+------------------------------+--------------------+
+| Apprentissage                     | **Win**                      |                    |
++-----------------------------------+------------------------------+--------------------+
+| Géospatial                        | *Tie*                        |  *Tie*             |
++-----------------------------------+------------------------------+--------------------+
+| Traitement automatisé de la       | **Win**                      |                    |
+| langue                            |                              |                    |
++-----------------------------------+------------------------------+--------------------+
+| Programmation lettrée             | *Tie*                        |  *Tie*             |
++-----------------------------------+------------------------------+--------------------+
+| Web / Mobile / Programmation      | **Win**                      |                    |
+| embarquée                         |                              |                    |
++-----------------------------------+------------------------------+--------------------+
+
+:::
+
+## Mon avis sur la question...
+
 
 ## Conclusion
 

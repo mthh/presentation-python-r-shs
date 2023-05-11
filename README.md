@@ -18,7 +18,7 @@ Au cours de cette présentation, un même jeu de données sera analysé à l'aid
 - Présentation historique des deux langages
 - Présentation comparée des écosystèmes (distribution, IDE, *package manager*, etc.)
 - Explorer un jeu de données en R et en Python (comparaison de l'approche générale, différences de syntaxe et de philosophie entre les langages, etc.)
-- Aperçu de l'écosystème de bibliothèques pour : le géospatial, les traitements statistiques, l'analyse du langage naturel, l'apprentissage et la visualisation de données
+- Aperçu de l'écosystème de bibliothèques pour : le géospatial, les traitements statistiques, le traitement du langage, l'apprentissage et la visualisation de données
 - Programmation lettrée et *notebooks*
 - Combiner l'utilisation de Python et de R dans un même programme
 - Conclusion : quel outil pour quelle tâche / se faire plaisir en programmant
