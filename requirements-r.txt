@@ -1,1 +1,7 @@
+reticulate
 rmarkdown
+tibble
+dplyr
+sf
+mapsf
+ggplot2

@@ -13,43 +13,210 @@ title-slide-attributes:
   data-background-image: images/logos-footer.png
   data-background-size: 42%
   data-background-position: 50% 90%
-css: ['style.css']
+css: ['static/style.css']
 prefer-html: true
 ---
 
-```{python}
-#! cache: true
-import pandas as pd
-print("aaa")
-```
 
 # Introduction
 
 ## Pourquoi comparer Python et R
 
--
+<br>
+<div style="text-align: center;">
+<img src="images/logo-python-vs-r.png" style="margin: auto; width: 600px; height: auto;" />
+</div>
+
+
+## Pourquoi comparer Python et R
+
+
+<div style="text-align: center;">
+<img src="images/book-r-python.png" style="margin: auto; width: 960px; height: auto;" />
+</div>
+
 
 # Historique et comparaison des langages sur le papier...
 
 ## Python
 
-- Langage créé à la fin des années 80 - première version publique sortie en 1991.
+<img src="images/logo-python.png" style="position: absolute;top: 10px;right: 10px;width: 105px !important;height: auto;" />
 
-- 
+<br>
 
+- Langage créé à la toute fin des années 80 - première version publique sortie en 1991.
+
+- **Libre** (régit par la *Python Software Foundation License*, équivalent à BSD)
+
+- Langage de **haut niveau**, **interprété**, **multi-paradigme** (impératif, fonctionnel, OO, ..)
+
+- **Typage dynamique fort** (et *duck typing*)
+
+- Toujours en développement actif (dernière version en avril 2023)
+
+::: {.notes}
+
+
+En 1989 aux Pays-Bas, Guido van Rossum invente le langage de programmation Python.
+C’est un fan de la série télévisée Monty Python’s Flying Circus, donc pour rendre un hommage à la série il donne le nom Python.
+Ce n’est qu’en 1991 que la première version de ce langage a été publiée.
+
+C’est la Python Software Foundation qui se charge de développer Python et de faire vivre la communauté de développeurs et utilisateurs.
+
+
+- Il est multiplateforme : fonctionne sur des nombreux systèmes d’exploitation ;
+- C'est un logiciel libre
+- C’est un langage interprété : le script python est directement exécuté, il n’a pas besoin d’être compilé avant d’être exécuté ;
+- C’est un langage orienté objet : on peut créer des programmes qui imite le comportement du monde réel ;
+- Enfin, il est notamment utilisé en bio-informatique, et plus couramment en analyse de données.
+
+
+Sur le site web, la description en une phrase du projet est "Python is a programming language that lets you work quickly and integrate systems more effectively"
+
+:::
 
 ## R
 
-## Python
+<img src="images/logo-r.png" style="position: absolute;top: 10px;right: 10px;width: 105px !important;height: auto;" />
 
-## R
+<br>
+
+- Le projet **R** naît en 1993 comme un projet de recherche à l'université d'Auckland.
+
+- C'est une implémentation du langage **S** (développé au milieu des années 70 dans les laboratoires Bell)
+
+- **Libre** (licence *GNU GPL*)
+
+- **Typage dynamique**
+
+- Toujours en développement actif (dernière version en avril 2023)
+
+::: {.notes}
+
+Sur le site web, le titre est "The R Project for Statistical Computing"
+
+et la description en une phrase du projet est : "R is a free software environment for statistical computing and graphics".
+
+Le projet R naît en 1993 comme un projet de recherche de Ross Ihaka et Robert Gentleman à l'université d'Auckland.
+
+:::
+
+
+## Fonctionnalités de base / Python
+
+::: {.medium}
+
+- Exécuter un script Python 
+
+```bash
+$ python mon_script.py
+```
+
+- Ouvrir un interpréteur interactif :
+
+```bash
+$ python mon_script.py
+```
+
+- Exemple
+
+```bash
+mthh@mthh-Swift-SF314-511:~$ python3
+Python 3.10.6 (main, Mar 10 2023, 10:55:28) [GCC 11.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print('Hello everybody !')
+Hello everybody !
+>>> exit()
+```
+
+:::
+
+## Fonctionnalités de base / R
+
+::: {.medium}
+
+- Exécuter un script R
+
+```bash
+$ Rscript mon_script.r
+```
+
+- Ouvrir un interpréteur interactif :
+
+```bash
+$ R
+```
+
+- Exemple
+
+```bash
+mthh@mthh-Swift-SF314-511:~$ R
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+(...)
+
+> print('Hi !')
+[1] "Hi !"
+> q()
+Save workspace image? [y/n/c]: n
+```
+
+:::
+
 
 # Présentation comparée des écosystèmes
 
-## Fonctionnalités natives / Python
+## Écosystème R
 
-## Fonctionnalités natives / R
+- Centré autour de l'interpréteur [**R**](https://www.r-project.org/)
 
+- Un IDE avec une position quasi-hégémonique : [**R studio**](https://posit.co/products/open-source/rstudio/)
+
+## Écosystème Python
+
+- Une implémentation de référence du langage [**Python**](https://www.python.org/) : [**CPython**](https://github.com/python/cpython) (mais d'autres implémentation : Jython, IronPython, PyPy, etc.)
+
+- Plusieurs *distributions* de Python (principalement Anaconda, une distribution des langages de programmation Python et R dédiée à la science des données et à l'apprentissage automatique)
+
+
+::: {.notes}
+
+- CPython est l'implémentation de référence de Python. C'est la version que la plupart des gens utilisent, notamment parce qu'elle est la plus facile à installer et à utiliser. Il est écrit en langage C et est maintenu par la Python Software Foundation.
+
+- Jython est une implémentation de Python écrite en Java. Il permet aux développeurs d'écrire des programmes Python qui peuvent être exécutés sur n'importe quelle machine virtuelle Java (JVM). Cela le rend particulièrement utile pour les développeurs qui travaillent dans un environnement Java.
+
+- IronPython est une implémentation de Python écrite en C# et destinée à être utilisée dans l'environnement .NET. Il permet aux développeurs d'écrire des programmes Python qui peuvent être exécutés sur la plate-forme .NET. Il est particulièrement utile pour les développeurs qui travaillent dans un environnement .NET.
+
+- PyPy est une implémentation alternative de Python qui est destinée à être plus rapide que CPython. Il est écrit en langage RPython et utilise une technique d'optimisation appelée compilation à la volée pour accélérer l'exécution des programmes.
+
+
+Anaconda est une distribution gratuite et open source de Python et R, qui a été développée pour simplifier le processus
+d'installation et de gestion des packages, ainsi que le processus
+de configuration et de gestion des environnements de développement scientifique de données.
+
+Il a été créé par Continuum Analytics, une entreprise qui a depuis été acquise par Anaconda, Inc.
+
+Anaconda est livré avec une gamme complète de bibliothèques scientifiques et de packages préinstallés,
+tels que NumPy, pandas, Matplotlib, SciPy, scikit-learn, TensorFlow et Jupyter Notebook, pour n'en citer que quelques-uns.
+Il est également facile à étendre avec des packages tiers, en utilisant le gestionnaire de packages conda, qui permet de télécharger et d'installer des packages à partir de sources externes.
+
+L'un des avantages les plus importants d'Anaconda est son système de gestion d'environnement,
+qui permet de créer des environnements Python isolés pour différents projets.
+
+:::
+
+## Écosystème Python
+
+- Plusieurs IDE appréciés par les utilisateurs de Python : **Spyder** (IDE "scientifique", interface comparable à R Studio),
+  **PyCharm** (logiciel propriétaire, plutôt pour développer des bibliothèques), **Jupyter Lab**, **Visual Studio Code**.
+
+
+<img src="images/spyder.png" style="float:left; width: 46%;" />
+
+<img src="https://www.jetbrains.com/pycharm/img/screenshots/complexLook@2x.jpg" style="float:right; width: 46%;"/>
 
 ## Packages additionnels
 
@@ -59,19 +226,23 @@ Des différences importantes existent toutefois dans la philosophie relative à 
 
 ## Packages additionnels / Installation en Python
 
-En Python, on installera ces packages en utilisant un outil appelé `pip`, avec des commandes comme :
+<br>
+
+En Python, on installera ces packages en utilisant un outil en ligne de commande appelé `pip`, avec des commandes comme :
 
 ```bash
-pip install numpy
+$ pip install numpy
 ```
 
 ou
 
 ```bash
-python -m pip install numpy
+$ python -m pip install numpy
 ```
 
 ## Packages additionnels / Installation en R
+
+<br>
 
 À l'inverse, en R on installera les packages au sein de son environnement de travail actuel, depuis l'interpréteur R :
 
@@ -81,41 +252,102 @@ install.packages('ggplot2')
 
 ## Packages additionnels / PyPI (Python)
 
-<img src="images/logo-pypi.small.svg" style="width: 200px !important; height: auto !important" />
+<img src="images/logo-pypi.small.svg" style="width: 200px !important; height: auto !important;" />
 
-- **PyPI** (Python Package Index) / [https://pypi.org/](pypi.org) :
+- **PyPI** (Python Package Index) / [https://pypi.org/](pypi.org) : le dépôt tiers officiel du langage Python, qui héberge les packages sous
+  sous la forme de fichier sources et/ou de binaires précompilés (*wheel*) - publication facile du moment que ce qui est versés est dans les formats
+  attendus (mais risque de *typosquatting* etc.)
 
-- 453 395 packages disponibles (4 451 674 versions)
+- 453 395 packages disponibles, soit 4 451 674 versions (au 11/05/2023)
 
--
+## Packages additionnels / Python
+
+<div class="center">
+<img src="images/python-stack.png" style="width:80%"/>
+<p class="small">Source : <a href="https://jupytearth.org/jupyter-resources/introduction/ecosystem.html">https://jupytearth.org/jupyter-resources/introduction/ecosystem.html</a></p>
+</div>
 
 ## Packages additionnels / CRAN (R)
 
-- **CRAN** (The Comprehensive R Archive Network) / [https://cran.r-project.org/](cran.r-project.org) : index de packages supervisé
+<br>
 
-- 19495 packages disponible (au 11/05/2023)
+- **CRAN** (The Comprehensive R Archive Network) / [https://cran.r-project.org/](cran.r-project.org) : index de packages supervisé - les packages
+  qui y sont versés doivent respecter différentes contraintes et la validation du dépôt est effectuée par des humains (pas ou peu de risque de code malveillant)
+
+- 19 495 packages disponible (au 11/05/2023)
 
 -
 
 ## Documentation / Python
 
+::: {.medium}
 Un point fort de Python est sa documentation officielle, qui contient tout le nécessaire pour utiliser le langage de manière proactive
 (tutoriel, référence de l'ensemble des fonctions / objets de tous les modules de la bibliothèque standard, etc.)
 et qui est mise à disposition dans plusieurs langues (Anglais, Français, Espagnol, Coréen, Japonais, Chinois, etc.).
+:::
+
+![](images/python-documentation.png)
+
+
+## Documentation / Python 
+
 
 Il n'existe toutefois pas un seul standard pour consulter la documentation des différents modules additionnels Python
-(cf. https://matplotlib.org/stable/api/index, https://pandas.pydata.org/docs/reference/index.html#api).
+(cf. [Documentation Matplotlib](https://matplotlib.org/stable/api/index), [Documentation pandas](https://pandas.pydata.org/docs/reference/index.html#api)).
 
-<img src="images/python-documentation.png" style="width: 80% !important;" />
+<img src="images/doc-geopandas.png" style="width: 40%; position: absolute; border: solid 1px black; left: 10px;" />
+
+<img src="images/doc-matplotlib.png" style="width: 40%; position: absolute; border: solid 1px black; bottom: -60px; left: 29%;" />
+
+<img src="images/doc-samgeo.png" style="width: 40%; position: absolute; border: solid 1px black; right: 10px;" />
 
 ## Documentation / R
 
 La documentation de R, tout aussi complète qu'elle soit est moins *user-friendly* et n'est disponible qu'en anglais.
 
 En revanche, à l'inverse de Python, la documentation de tous les packages additionnels publiés sur le CRAN est consultable dans un même formalisme
-(en PDF depuis le site du CRAN, ou via des sites Web comme https://www.rdocumentation.org/).
+(en PDF depuis le site du CRAN, ou via des sites Web comme [www.rdocumentation.org](https://www.rdocumentation.org/)).
+
+<img src="images/doc-rbase-system.png" style="width: 40%; position: absolute; border: solid 1px black; left: 10px;" />
+
+<img src="images/doc-mapsf.png" style="width: 40%; position: absolute; border: solid 1px black; right: 10px;" />
 
 # En terme de syntaxe ça donne quoi ?
+
+## Syntaxe Python
+
+```{python}
+#| error: true
+#| echo: true
+#| message: true
+#| cache: true
+from statistics import mean, stdev
+
+def cv(x):
+    moy = mean(x)
+    s = stdev(x)
+    result = s / moy
+    return result
+
+print(cv([5, 6, 3, 8, 9, 12]))
+```
+
+## Syntaxe R
+
+```{r}
+#| error: true
+#| echo: true
+#| message: true
+#| cache: true
+cv <- function(x) {
+  moy <- mean(x)
+  s <- sd(x)
+  rslt <- s / moy
+  rslt
+}
+
+print(cv(c(5, 6, 3, 8, 9, 12)))
+```
 
 ## Python et l'indentation du code...
 
@@ -209,6 +441,8 @@ print(result)
 
 ## R, accolades et `pipe`s
 
+<br>
+
 À l'inverse de Python, R utilise des accolades pour délimiter les blocs d'instructions et ne se soucie donc par de l'indentation (on veillera quand même être cohérent afin de faciliter la lecture du code)
 
 ```{r}
@@ -225,6 +459,8 @@ for (item in my_list) {
 ```
 
 ## R, accolades et `pipe`s
+
+<br>
 
 R propose par ailleurs un opérateur `pipe` pour enchaîner les commandes, permettant ainsi
 de remplacer une expression telle que 
@@ -252,6 +488,8 @@ Il s'agit d'une question de gout, et ça dépend aussi des expressions à encha�
 :::
 
 ## Python
+
+<br>
 
 Python est livré avec un ensemble complet de structures de données dans sa bibliothèque standard : `dict` (tableau associatif), `tuple` (un conteneur immuable), `list` (tableau dynamique mutable), `array` (tableau typé de base), etc.
 
@@ -295,6 +533,25 @@ print('Distance = ', p1.distance(p2))
 
 ## R
 
+|         | Homogenous          | Heterogenous |
+|---------|:-------------------:|:------------:|
+| 1d      | `vector`, `factor`  | `list`       |
+| 2d      | `matrix`            | `data.frame` |
+| nd      | `array`             |              |
+
+:::{.notes}
+- Vectors
+
+- Lists
+
+- Matrices
+
+- Arrays
+
+- Factors
+
+- Data Frames
+:::
 
 # La syntaxe c'est bien... et la sémantique qui y est associée ?
 
@@ -303,25 +560,27 @@ print('Distance = ', p1.distance(p2))
 Sémantique *copy-on-modify* :
 
 ```{r}
-my_list <- c(1, 2, 5)
-other_list <- my_list
-# Pour l'instant 'other_list' et 'my_list' pointent vers le même objet..
+#| echo: true
+my_vec <- c(1, 2, 5)
+other_vec <- my_vec
+# Pour l'instant 'other_vec' et 'my_vec' pointent vers le même objet..
 
-# Modifions un élément de 'other_list'..
-other_list[3] <- 11
-# une copie de 'my_list' a été faite, son 3 élément a été modifié puis 'other_list' s'est mis à pointer vers cette copie
+# Modifions un élément de 'other_vec'..
+other_vec[3] <- 11
+# une copie de 'my_vec' a été faite, son 3 élément a été modifié puis 'other_vec' s'est mis à pointer vers cette copie
 
-print(my_list)
-print(other_list)
+print(my_vec)
+print(other_vec)
 ```
 
 Pour en savoir plus sur ce point [*Advanced R* (Hadley Wickham)](https://bookdown.dongzhuoer.com/hadley/adv-r/copy-on-modify.html)
 
-## Python
+## Python
 
-Sémantique *pass-by-assignment* et différence en types muables et immuables :
+Sémantique *pass-by-assignment* et différence entre types muables et immuables :
 
 ```{python}
+#| echo: true
 # le type list est muable
 a = [1, 3, 5]
 b = a # 'a' et 'b' pointent vers le même objet
@@ -330,6 +589,7 @@ b[2] = 11 # Modifie l'objet vers lequel pointe 'b' qui est également celui vers
 ```
 
 ```{python}
+#| echo: true
 i = 5 # les entiers sont immuables
 j = i
 i = i + 1 # la valeur 5 ne peut pas être modifiée, un nouvel objet est créé ici
@@ -340,14 +600,156 @@ print(j) # 7
 
 Pour en savoir plus sur ce point : [Documentation officielle -  Questions fréquemment posées sur Python](https://docs.python.org/fr/3/faq/programming.html#why-did-changing-list-y-also-change-list-x)
 
+## Indices
 
-## Explorer un jeu de données...
+- En Python les indices de liste commencent à 0 :
+
+```{python}
+#| echo: true
+my_list = [1, 3, 5]
+print(my_list[0])
+```
+
+- En R ils commencent à 1 :
+
+```{r}
+#| echo: true
+my_list <- list(1, 3, 5)
+print(my_list[1])
+```
+
+# Manipuler des tableaux de valeurs
+
+:::{.small}
+Les premières différences notables entre Python et R...
+:::
+
+## Tableaux de valeurs en R
+
+Le type `vector` est adapté pour stocker des tableaux de valeurs (du même type) unidimensionnel
+et le type `matrix` est adapté pour stocker des tableaux de valeurs (du même type) bidimensionnel.
+
+```{r}
+#| echo: true
+my_vec <- c(1, 2, 3, 4)
+my_matrix <- matrix(my_vec, nrow = 2, ncol = 2)
+
+print(my_vec + 2)
+
+print(my_matrix * my_matrix)
+
+print(my_matrix[2, 1])
+```
+
+
+## Tableaux de valeurs en Python
+
+Ni le type `list` (conteneur hétérogène) ni le type natif `array`  
+(tableau typé) ne supportent xxx...
+La solution : la bibliothèque `NumPy` ([numpy.org](https://numpy.org/)).
+
+<img src="images/logo-numpy.svg" style="position: absolute; width: 180px !important; height: auto !important; right: -10px; top: -10px;"/>
+
+```{python}
+#| echo: true
+import numpy as np
+
+my_array = np.array([1, 2, 3, 4])
+my_matrix = my_array.reshape(2, 2)
+
+print(my_array + 2)
+
+print(my_matrix * my_matrix)
+
+print(my_matrix[1, 0])
+```
+
+:::{.notes}
+
+Aller sur https://numpy.org/ et
+:::
+
+# Explorer un jeu de données...
+
+:::{.small}
 
 Nous allons voir, dans chacun des deux langages, comment ouvrir et préparer un jeu de données pour y effectuer plusieurs traitements courants :
 - analyse statistique
 - traitement automatique de la langue naturelle
 -
 -
+
+:::
+
+:::{.notes}
+
+Les *dataframes* : structure de données commune à de nombreuses bibliothèques de traitement de données, qui organisent
+les données dans un tableau bidimensionnel de lignes et de colonnes, nommées, à l'instar d'une feuille de calcul (excel, etc.).
+
+On peut importer les données dans des dataframes depuis différents types de formats, CSV, Excel, JSON, etc.
+
+:::
+
+## R et dataframes (1)
+
+<br>
+
+- Le type natif `data.frame`.
+
+- D'autres bibliothèques (`data.table`, `tibble`, etc.)
+
+## R et dataframes (2)
+
+```{r}
+#| echo: true
+df <- data.frame(
+   emp_id = c(1:5), 
+   emp_name = c("Rick","Dan","Michelle","Ryan","Jane"),
+   salary = c(623.3,515.2,611.0,729.0,843.25), 
+   start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11", "2015-03-27")),
+   stringsAsFactors = FALSE
+)
+	
+print(df)
+str(df)
+```
+
+## R et dataframes (3)
+
+
+
+## Python et dataframes (1)
+
+<img src="images/logo-pandas.svg" style="width: 220px !important; height: auto;" />
+
+- On utilisera ...
+
+- Blablabla
+
+## Python et dataframes (2)
+
+:::{.medium}
+
+```{python}
+#| echo: true
+import pandas as pd
+
+data_dict = {
+  "emp_id": list(range(5)),
+  "emp_name": ["Rick", "Dan", "Michelle", "Ryan", "Jane"],
+  "salary": [623.3, 515.2, 611.0, 729.0, 843.25],
+  "start_date": pd.to_datetime(["2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11", "2015-03-27"]),
+}
+
+df = pd.DataFrame(data_dict)
+
+print(df.head())
+print(df.dtypes)
+```
+
+:::
+
+## Python et dataframes (3)
 
 ## A
 
@@ -391,13 +793,6 @@ chipo.head().to_html()
 :::
 
 ::::
-
-
-Plusieurs éléments peuvent être notés dès maintenant,
-que ce soit concernant l'import des bibliothèques utilisées que concernant le
-type de programmation mis en oeuvre dans les deux langages.
-
-La syntaxe de R est plutôt *fonctionnelle* alors que la syntaxe de python est plutôt *orientée-objet* (on dit d'ailleurs souvent que tout est *objet* en Python).
 
 
 ## Load the data
@@ -475,40 +870,231 @@ ggplot(data = lemur_residuals,
                                        colour = "#eaf2f2"))
 ```
 
-## Programmer pour autres chose que la science des données...
+## Récupérer un vrai jeu de données
 
+::: {.panel-tabset}
+
+## Python
+
+```{python}
+#| echo: true
+import pandas as pd
+
+housing_data = pd.read_csv('static/home_data.csv')
+```
+
+## R
+
+```{r}
+#| echo: true
+housing_data <- readr::read_csv('static/home_data.csv')
+```
+
+## Data
+
+:::{.small}
+
+```{r}
+kable(head(housing_data))
+```
+
+:::
+
+:::
+
+## Statistiques descriptives
+
+::: {.panel-tabset}
+
+## Python
+
+```{python}
+pd.set_option('display.max_columns', 12)
+```
+
+```{python}
+#| echo: true
+housing_data.describe()
+```
+
+## R
+
+```{r}
+#| echo: true
+summary(housing_data)
+```
+
+:::
+
+
+## Statistiques bivariées
+
+
+## Apprentissage automatique
+
+## Apprentissage automatique / Python
+
+- Une bibliothèque de référence : scikit learn
+
+- **TensorFlow** (développé par Google)
+
+- **Keras** (pour interagir avec des algorithmes de réseaux de neurones profonds et d'apprentissage automatique, dont ceux de TensorFlow)
+
+
+## Apprentissage automatique / R
+
+- **mlr3**
+
+- **TensorFlow for R** (mais nécessite une installation Python avec TensorFlow)
+
+
+## Visualisation / R
+
+- Utilisation des fonctionnalité de **R base** ou de bibliothèques comme **ggplot2**.
+
+## Visualisation / Python
+
+<img src="images/logo-matplotlib.svg" style="position: absolute; width: 160px; right: -10px; top: 40px;" />
+
+- Utilisation de [**matplotlib**](https://matplotlib.org/) (et éventuellement de bibliothèques comme [**seaborn**](https://seaborn.pydata.org/), basé sur matplotlib, qui 
+  offrent une API de plus haut-niveau pour faire facilement certains types de graphiques), principalement
+  pour des graphiques statiques (images).
+
+- [**Bokeh**](https://bokeh.org/) principalement pour des graphiques interactifs.
+
+<div class="center">
+<img src="images/bokeh-gallery.jpg" style="width:500px;"/>
+</div>
+
+- Totalement compatible avec la stack NumPy-Pandas-Jupyter-etc.
+
+
+## Visualisation
+
+- Des bibliothèques sont disponibles dans les 2 langages : [**Plotly**](https://plotly.com/) ()
+
+## Géospatial (vectoriel)
+
+Même si plusieurs solutions concurrentes existent dans chacun des 2 langages, les bibliothèques les plus utilisés dans les 2 langages
+suivent la même logique :
+
+- utilisation sous-jacente de **GDAL/OGR** pour les I/O
+
+- utilisation sous-jacente de **GEOS** pour manipuler les géométries (prédicats spatiaux, etc.)
+
+- utilisation sous-jacente de **PROJ** pour manipuler les systèmes de coordonnée de référence
+
+- étendre un type "data frame" pour permettre la présence d'une colonne de géométries et présence de traitement appropriés
+
+## Géospatial (vecteur) / R
+
+- Package **sf**, qui étend le type `data.frame` de R base ou le type `tibble`
+
+<img src="images/logo-sf.gif" />
+
+- Cartographie : [**mapsf**]() ou [**tmap**]()
+
+## Géospatial / Python
+
+- Package **geopandas**, qui étend le type `DataFrame` de pandas en `GeoDataFrame`
+
+<img src="images/logo_geopandas.svg" />
+
+- Cartographie : 
+
+## *Web scrapping*
+
+## *Web scrapping* / Python
+
+## Pour résumer...
+
+:::{.small}
+
++-----------------------------------+------------------------------+--------------------+
+| Domaine                           | **Python**                   | **R**              |
++===================================+==============================+====================+
+| Manipulation de données           | Pandas, polars               | R base, tibble,    |
+|                                   |                              | data.table         |
++-----------------------------------+------------------------------+--------------------+
+| Statistique                       | statsmodels                  | R base             |
++-----------------------------------+------------------------------+--------------------+
+| Apprentissage automatique         | Scikit learn                 | mlr3               |
++-----------------------------------+------------------------------+--------------------+
+| Visualisation                     | Matplotlib, Bokeh, Plotly    | R base, Plotly     |
+|                                   |                              |                    |
++-----------------------------------+------------------------------+--------------------+
+| Géospatial                        | GeoPandas, Shapely,          | sf, terra          |
+|                                   | Rasterio                     |                    |
++-----------------------------------+------------------------------+--------------------+
+| Web scrapping                     | BeautifoulSoup4, Selenium,   |                    |
+|                                   | Scrapy                       |                    |
++-----------------------------------+------------------------------+--------------------+
+| Traitement automatisé de la       | Spacy                        |                    |
+| langue                            |                              |                    |
++-----------------------------------+------------------------------+--------------------+
+| Programmation lettrée             | *Tie*                        |  *Tie*             |
++-----------------------------------+------------------------------+--------------------+
+
+:::
+
+# Programmer pour autre chose que la science des données
+
+:::{.small}
 Quand on prend gout à la programmation, il n'est pas rare de vouloir automatiser différents types de tâches
-(opération de maintenance sur une machine perso. ou sur un serveur, 
+(opération de maintenance sur une machine perso. ou sur un serveur, ...).
+:::
 
-### Python
+## Python
 
 Un des points sur lequel Python est particulièrement performant ... communication avec l'OS...
 
-### R
+## R
 
 
 
-## Valoriser ses résultats
+# Valoriser ses résultats
 
-Plusieurs manières de valoriser les scripts écrits dans les deux langages ainsi que les résultats obtenues existent :
+:::{.small}
+Plusieurs manières de valoriser les scripts écrits dans les deux langages ainsi que les résultats obtenus existent :
+
 - programmation lettrée
 - publication sur le Web
 - développement d'une application Web
 - développement d'une application mobile, etc.
-
-### *Notebooks* et programmation lettrée
-
-
-### Publication sur le Web
+:::
 
 
-### Développement d'application Web
+## *Notebooks* et programmation lettrée
 
 
-### Développement d'application mobiles (Android / iOS)
+## Publication sur le Web
+
+- R : [**Shiny**]()
+
+- Python : [**Bokeh** (et *Bokeh Server*)](), [**Gradio**](https://www.gradio.app/)
+
+## Développement d'application Web
+
+- Différentes solutions en R : `servr`, 
+
+- Mais Python est un langage de premier choix pour le développement Web côté serveur (sites Web dynamiques, API REST, etc.): Flask, Django, FastAPI, etc.
 
 
-[https://beeware.org/](beeware.org)
+## Développement d'application Desktop
+
+
+
+## Développement d'application mobiles (Android / iOS)
+
+Certains projets 
+
+En Python :
+- [https://beeware.org/](beeware.org) - Application multiplateforme (Windows, Linux, Mac OS, Android, iOS, Web)
+- [Kivy](https://kivy.org/doc/stable/guide/android.html)
+
+
+
+# Conclusion
 
 
 ## Quoi retenir ?
@@ -518,11 +1104,13 @@ Plusieurs manières de valoriser les scripts écrits dans les deux langages ains
 - Python a ... alors que R a ...
 
 - De manière générale, R est meilleur pour les statistiques
-(ça ne veut pas dire que Python est mauvais pour autant ;))
+  (ça ne veut pas dire que Python est mauvais pour autant ;))
 
 - Il est généralement plus simple de faire des tâches non-statistiques en Python
 
-- Voir https://www.tiobe.com/tiobe-index/
+- Voir https://www.tiobe.com/tiobe-index/ / https://pypl.github.io/PYPL.html
+
+- Offre d'emploi
 
 ## Synthèse de la comparaison
 
@@ -542,15 +1130,15 @@ Plusieurs manières de valoriser les scripts écrits dans les deux langages ains
 | Documentation                     |                              |  **Win**           |
 | Packages additionnels             |                              |                    |
 +-----------------------------------+------------------------------+--------------------+
-| Prix du ticket d'entrée           | *Tie*                        |  *Tie*             |
+| Prix du ticket d'entrée           |                              |  Win (?)           |
 +-----------------------------------+------------------------------+--------------------+
-| Learning curve                    | *Tie*                        |  *Tie*             |
+| Learning curve                    |                              |  Win (?)           |
 +-----------------------------------+------------------------------+--------------------+
-| Web scrapping                     | Win                          |                    |
+| Web scrapping                     | **Win**                      |                    |
 +-----------------------------------+------------------------------+--------------------+
 | Statistique                       |                              |  **Win**           |
 +-----------------------------------+------------------------------+--------------------+
-| Apprentissage                     | **Win**                      |                    |
+| Apprentissage automatique         | **Win**                      |                    |
 +-----------------------------------+------------------------------+--------------------+
 | Géospatial                        | *Tie*                        |  *Tie*             |
 +-----------------------------------+------------------------------+--------------------+
@@ -565,9 +1153,17 @@ Plusieurs manières de valoriser les scripts écrits dans les deux langages ains
 
 :::
 
+::: {.notes}
+
+Ça dépend de ce qu'on appelle "géospatial"... 
+SIG en général ? Python probablement
+Statistiques spatiales, algo spécifique à l'écologie, etc... R probablement
+
+:::
+
 ## Mon avis sur la question...
 
 
-## Conclusion
+## Un dernier mot...
 
 Utiliser le langage qui vous plait le plus... prendre du plaisir en développant est important !
