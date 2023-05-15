@@ -2,3 +2,9 @@ numpy
 pandas
 statsmodels
 requests
+beautifulsoup4
+lxml
+seaborn
+fastapi
+geopandas
+uvicorn

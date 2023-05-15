@@ -35,6 +35,51 @@ prefer-html: true
 <img src="images/book-r-python.png" style="margin: auto; width: 960px; height: auto;" />
 </div>
 
+## Pourquoi comparer Python et R
+
+
+<div style="text-align: center;">
+<img src="images/tweets.png" style="margin: auto; width: 960px; height: auto;" />
+</div>
+
+## Pourquoi comparer Python et R
+
+
+<div style="text-align: center;">
+<img src="images/youtube-r-python.png" style="margin: auto; width: 960px; height: auto; border: solid 1px black;" />
+</div>
+
+## Pourquoi vous posez-vous la question ?
+
+- Un **besoin spécifique** en terme de manipulation de données ? **Curiosité** ? Se conforter dans son choix ? **Procrastination** à l'apprentissage de la programmation ?
+
+<div class="center">
+<img src="images/1107_R1IgVklWIDMyODYtMTc.jpg" style="width: 400px"/>
+<p class="small"><i><a href="https://www.vecteezy.com/free-vector/procrastination">Procrastination Vectors by Vecteezy</a></i></p>
+</div>
+
+## Mon profil (vis à vis des langages informatiques)
+
+:::{.medium}
+
+- Apprentissage du **C** vers 14-15 ans (pas réutilisé passé mes 17-18 ans)
+
+- Licence & Master en géographie (apprentissage de **R** pour la statistique)
+
+- Fin de M2, "projet pro." avec 4 camarades : coder en Python nous aurait évité beaucoup de clics répétitif pour la partie SIG.. *"je devrais apprendre"* - analyses mutivariées en **R**
+
+- Un peu de chômage après un poste d'IE : j'apprends le **Python**
+
+- IE en sciences de l'information géographique (**Python**, **JavaScript**, un peu de **R** car tous les collègues utilisent R)
+
+- J'apprends le **Rust** sur mon temps libre
+
+- Thèse d'informatique (Web Sémantique + Géovisualisation - **Java**, **JavaScript**, **Python**)
+
+- IR en développement logiciel (*probablement un peu de tous les langages cités précédemment*)
+
+:::
+
 
 # Historique et comparaison des langages sur le papier...
 
@@ -48,7 +93,7 @@ prefer-html: true
 
 - **Libre** (régit par la *Python Software Foundation License*, équivalent à BSD)
 
-- Langage de **haut niveau**, **interprété**, **multi-paradigme** (impératif, fonctionnel, OO, ..)
+- Langage **polyvalent**, **interprété**, **multi-paradigme** (impératif, fonctionnel, OO, ..)
 
 - **Typage dynamique fort** (et *duck typing*)
 
@@ -87,11 +132,15 @@ Sur le site web, la description en une phrase du projet est "Python is a program
 
 - **Libre** (licence *GNU GPL*)
 
+- Langage **interprété**, **multi-paradigme** (impératif, fonctionnel, OO, ..)
+
 - **Typage dynamique**
 
 - Toujours en développement actif (dernière version en avril 2023)
 
+
 ::: {.notes}
+
 
 Sur le site web, le titre est "The R Project for Statistical Computing"
 
@@ -101,6 +150,72 @@ Le projet R naît en 1993 comme un projet de recherche de Ross Ihaka et Robert G
 
 :::
 
+## Python / R
+
+<br>
+
+:::: {.columns}
+
+::: {.column .medium width="50%"}
+
+### Python
+
+- *General-purpose programming language*
+
+- *"Jack of all trades, master of none"* ?
+
+- Utilisé par Google, Facebook, Spotify, IBM, etc.
+
+:::
+
+::: {.column .medium width="50%"}
+
+
+### R
+
+- *For statistical computing and graphics*
+
+- *"By statisticians, for statisticians"*
+
+- Utilisé par Google, Facebook, Microsoft, etc.
+
+:::
+
+::::
+
+- Mais la question se pose car Python est de plus en plus compétent pour l'analyse de données...
+
+:::{.notes}
+"Jack of all trades, master of none" est une figure de style utilisée en référence à une personne qui a
+acquis de nombreuses compétences, plutôt que d'acquérir une expertise en se concentrant sur une seule.
+:::
+
+## Par rapport aux autres langages de programmation
+
+<br>
+
+- Les deux sont des langages **_interprétés_** (*langage de script*), par opposition à des langages **_compilés_** (C, C++, Rust, Fortran, Pascal, etc.).
+
+- Les deux sont des langages de (très) **haut-niveau**, **modernes** et **matures**
+
+<br>
+
+- Julia ? Haskel ? Rust ? Java ?
+
+:::{.notes}
+
+- Un compilateur est le terme utilisé pour désigner un programme qui transforme un code source écrit dans un langage de programmation en un autre langage informatique. Il transforme un langage simple compréhensible par l'homme en un language plus complexe compréhensible par la machine, le language machine. Inversement, un programme effectuant la tâche inverse est un décompilateur.
+
+- L'interpréteur est un outil qui analyse votre code source, le traduit en language machiné et l'exécute. Là où votre compilateur compile votre code une seule fois et génère un exécutable, l'interpréteur va réinterpréter votre code à chaque lancement de votre programme.
+
+- Un programme script est exécuté à partir du fichier source via un interpréteur de script.
+
+- Un programme compilé est exécuté à partir d'un bloc en langage machine issu de la traduction du fichier source.
+
+- Un langage "semi-interprété" ou "semi-compilé" comprend un interprète qui lit le langage cible avant de générer un "Bytecode". Une machine virtuelle va ensuite exécuter ce bytecode. Le langage semi-interprété le plus connu est le Java
+
+- En programmation informatique, un langage de programmation à haut niveau d'abstraction généralement appelé langage de haut niveau est un langage de programmation orienté autour du problème à résoudre, qui permet d'écrire des programmes en utilisant des mots usuels des langues naturelles (très souvent de l'anglais) et des symboles mathématiques familiers. Un langage de haut niveau fait abstraction des caractéristiques techniques du matériel utilisé pour exécuter le programme, tels que les registres et les drapeaux du processeur.
+:::
 
 ## Fonctionnalités de base / Python
 
@@ -175,11 +290,21 @@ Save workspace image? [y/n/c]: n
 
 - Un IDE avec une position quasi-hégémonique : [**R studio**](https://posit.co/products/open-source/rstudio/)
 
+<div class="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/RStudio_IDE_screenshot.png" style="width: 750px"/>
+</div>
+
 ## Écosystème Python
 
-- Une implémentation de référence du langage [**Python**](https://www.python.org/) : [**CPython**](https://github.com/python/cpython) (mais d'autres implémentation : Jython, IronPython, PyPy, etc.)
+- Une implémentation de référence du langage [**Python**](https://www.python.org/) : [**CPython**](https://github.com/python/cpython)
+  (mais d'autres implémentations : Jython, IronPython, PyPy, etc.)
 
 - Plusieurs *distributions* de Python (principalement Anaconda, une distribution des langages de programmation Python et R dédiée à la science des données et à l'apprentissage automatique)
+
+<div class="center">
+<img src="images/logo-anaconda.png" />
+<p class="small">Source: <a href="https://anaconda.org">anaconda.org</a></p>
+</div>
 
 
 ::: {.notes}
@@ -220,9 +345,11 @@ qui permet de créer des environnements Python isolés pour différents projets.
 
 ## Packages additionnels
 
-Les deux langages proposent d'installer des packages additionnels, et, pour chacun des deux langages, des outils ainsi qu'un index de packages installables existent.
+<br>
 
-Des différences importantes existent toutefois dans la philosophie relative à l'installation et à la publication de ces packages.
+Les **deux langages** proposent d'installer des **packages additionnels**, et, pour chacun des deux langages, des outils ainsi qu'un index de packages installables existent.
+
+Des _différences importantes_ existent toutefois dans la _philosophie relative à l'installation et à la publication de ces packages_.
 
 ## Packages additionnels / Installation en Python
 
@@ -255,7 +382,7 @@ install.packages('ggplot2')
 <img src="images/logo-pypi.small.svg" style="width: 200px !important; height: auto !important;" />
 
 - **PyPI** (Python Package Index) / [https://pypi.org/](pypi.org) : le dépôt tiers officiel du langage Python, qui héberge les packages sous
-  sous la forme de fichier sources et/ou de binaires précompilés (*wheel*) - publication facile du moment que ce qui est versés est dans les formats
+  sous la forme de fichier sources et/ou de binaires précompilés (*wheel*) - publication facile du moment que ce qui est versé est dans les formats
   attendus (mais risque de *typosquatting* etc.)
 
 - 453 395 packages disponibles, soit 4 451 674 versions (au 11/05/2023)
@@ -274,9 +401,17 @@ install.packages('ggplot2')
 - **CRAN** (The Comprehensive R Archive Network) / [https://cran.r-project.org/](cran.r-project.org) : index de packages supervisé - les packages
   qui y sont versés doivent respecter différentes contraintes et la validation du dépôt est effectuée par des humains (pas ou peu de risque de code malveillant)
 
+<br>
+
 - 19 495 packages disponible (au 11/05/2023)
 
--
+
+## Packages additionnels / R
+
+<div class="center">
+<img src="images/tidyverse.png" style="width:95%"/>
+<p class="small">Source : <a href="https://www.tidyverse.org/">https://www.tidyverse.org/</a></p>
+</div>
 
 ## Documentation / Python
 
@@ -303,10 +438,10 @@ Il n'existe toutefois pas un seul standard pour consulter la documentation des d
 
 ## Documentation / R
 
-La documentation de R, tout aussi complète qu'elle soit est moins *user-friendly* et n'est disponible qu'en anglais.
+La documentation de R, tout aussi complète qu'elle soit est (selon moi) moins *user-friendly* et n'est disponible qu'en anglais.
 
 En revanche, à l'inverse de Python, la documentation de tous les packages additionnels publiés sur le CRAN est consultable dans un même formalisme
-(en PDF depuis le site du CRAN, ou via des sites Web comme [www.rdocumentation.org](https://www.rdocumentation.org/)).
+(en [PDF](https://cran.r-project.org/web/packages/sf/sf.pdf) depuis le site du CRAN , ou via des sites Web comme [www.rdocumentation.org](https://www.rdocumentation.org/)).
 
 <img src="images/doc-rbase-system.png" style="width: 40%; position: absolute; border: solid 1px black; left: 10px;" />
 
@@ -387,19 +522,20 @@ for item in my_list:
 
 ## Python et l'indentation du code...
 
-- Respecter les règles d'identations est nécessaire (comprendre *obligatoire*) en Python.
+- Respecter les règles d’indentations est *obligatoire* en Python.
 
 - Ce n'est pas une *contrainte* lors d'une session de travail car les IDE guident la position du curseur.
 
-- Cette indentation a un rôle direct sur le contrôle du flux d'éxecution.
+- Cette indentation a un rôle direct sur le contrôle du flux d'exécution.
 
 - Elle permet notamment d'éviter l'utilisation d'accolades (*curly brackets*) pour délimiter les blocs et de point-virgules pour délimiter les instructions.
+
 
 ## Python et l'indentation du code...
 
 <br>
 
-Le code qui suit est volontairement incorrect mais ne génère pas d'erreur lors de l'éxecution :
+Le code qui suit est volontairement incorrect mais ne génère pas d'erreur lors de l'exécution :
 
 ```{python}
 #| echo: true
@@ -439,7 +575,7 @@ for item1, item2 in zip(li1, li2):
 print(result)
 ```
 
-## R, accolades et `pipe`s
+## R, accolades et *pipe*
 
 <br>
 
@@ -458,11 +594,11 @@ for (item in my_list) {
 }
 ```
 
-## R, accolades et `pipe`s
+## R, accolades et *pipe*
 
 <br>
 
-R propose par ailleurs un opérateur `pipe` pour enchaîner les commandes, permettant ainsi
+- R propose par ailleurs un opérateur `pipe` (depuis R 4.1.0 - Mai 2021) pour enchaîner les commandes, permettant ainsi
 de remplacer une expression telle que 
 
 ```{r}
@@ -481,6 +617,30 @@ par
 Il s'agit d'une question de gout, et ça dépend aussi des expressions à enchaîner...dans l'exemple actuel je préfère la version sans l'opérateur pipe, que je trouve non ambigue et facilement lisible par un public venant de n'importe quel langage...
 :::
 
+## R, accolades et *pipe*
+
+<br>
+
+- Depuis la sortie du package `magrittr` (en 2014), il existe un opérateur `pipe` s'écrivant `%>%`, couramment utilisé
+  dans le *tidyverse*
+
+```R
+library(dplyr)
+
+lemur_data <- lemurs %>% 
+  filter(taxon == "ECOL",
+         sex == "M",
+         age_category == "adult") %>% 
+  select(c(age_at_wt_mo, weight_g)) %>% 
+  rename(Age = age_at_wt_mo, 
+         Weight = weight_g)
+```
+
+- Des différences existent toutefois entre `|>` et `%>%`
+
+- En Python on ne trouvera pas de nouveaux opérateurs de ce type, définis par des packages
+
+
 # *Data structures* natives
 
 :::{.small}
@@ -491,14 +651,35 @@ Il s'agit d'une question de gout, et ça dépend aussi des expressions à encha�
 
 <br>
 
-Python est livré avec un ensemble complet de structures de données dans sa bibliothèque standard : `dict` (tableau associatif), `tuple` (un conteneur immuable), `list` (tableau dynamique mutable), `array` (tableau typé de base), etc.
+:::{.medium}
 
+Python est livré avec un ensemble complet de structures de données dans sa bibliothèque standard :
+
+- `dict` (tableau associatif)
 
 ```{python}
 #| echo: true
 my_dict = { 'john': 32, 'jane': 27, 'jack': 30 }
+print(my_dict['john'])
 ```
 
+- `tuple` (un conteneur immuable),
+
+```{python}
+#| echo: true
+my_coordinates = (2.349014, 48.864716)
+```
+
+- `list` (tableau dynamique mutable),
+
+```{python}
+#| echo: true
+my_list = ['a', 12, (2.349014, 48.864716), { "foo": 42 }]
+```
+
+- `array` (tableau typé de base), `enum` (énumération), etc.
+
+:::
 
 ## Python *(classes)*
 
@@ -529,15 +710,33 @@ p2 = Point(9, 9)
 print('Distance = ', p1.distance(p2))
 ```
 
-
-
 ## R
+
+:::{.medium}
 
 |         | Homogenous          | Heterogenous |
 |---------|:-------------------:|:------------:|
 | 1d      | `vector`, `factor`  | `list`       |
 | 2d      | `matrix`            | `data.frame` |
 | nd      | `array`             |              |
+
+Utilisation
+
+```r
+my_vector <- c(23.6, 89.1, 21.7)
+
+my_factor <- factor(c("a", "b", "a", "a"))
+
+my_list <- list("a", 12, 21)
+
+my_other_list <- list(x=2.349014, y=48.864716)
+
+df <- data.frame(
+    emp_name = c("Rick","Dan","Michelle","Ryan","Jane"),
+    salary = c(623.3,515.2,611.0,729.0,843.25)
+)
+```
+:::
 
 :::{.notes}
 - Vectors
@@ -552,6 +751,59 @@ print('Distance = ', p1.distance(p2))
 
 - Data Frames
 :::
+
+## R *(classes)*
+
+- R est aussi un langage orienté-objet
+
+- Mais plusieurs APIs en compétition pour faire de la programmation orientée-objet en R (*S3*, *R6*, *S4*)
+
+- Surtout utilisés par les développeurs de bibliothèques et/ou les développeurs avancés en R.
+
+- L'API présenté aux utilisateurs semble plus *fonctionnelle* qu'*orientée-objet*
+
+
+## R *(classes)*
+
+*Ici avec le système __S4__...*
+
+```R
+library(methods)
+
+setClass("Point", 
+         slots = c(
+           x = "numeric", 
+           y = "numeric"
+         )
+)
+
+setGeneric("x", function(pt) standardGeneric("x"))
+setGeneric("x<-", function(pt, value) standardGeneric("x<-"))
+setGeneric("y", function(pt) standardGeneric("y"))
+setGeneric("y<-", function(pt, value) standardGeneric("y<-"))
+
+setMethod("x", "Point", function(pt) pt@x)
+setMethod("y", "Point", function(pt) pt@y)
+
+setMethod("x<-", "Point", function(pt, value) {
+  pt@x <- value
+  pt
+})
+setMethod("y<-", "Point", function(pt, value) {
+  pt@y <- value
+  pt
+})
+```
+
+## R *(classes)*
+
+Instanciation et utilisation :
+
+```R
+p1 <- new("Point", x = 2, y = 6)
+p2 <- new("Point", x = 3, y = 9)
+```
+
 
 # La syntaxe c'est bien... et la sémantique qui y est associée ?
 
@@ -618,6 +870,43 @@ my_list <- list(1, 3, 5)
 print(my_list[1])
 ```
 
+## Maintenabilité du code
+
+<br>
+
+```{python}
+#| echo: true
+class Point:
+    def __init__(self, x, y):
+      self.x = x
+      self.y = y
+
+    def distance(self, other):
+      return (
+        (other.x - self.x) ** 2 + (other.y - self.y) ** 2
+      ) ** 0.5
+```
+
+## Maintenabilité du code
+
+<br>
+
+```{python}
+#| echo: true
+class Point:
+    def __init__(self, x: float, y: float) -> None:
+      self.x = x
+      self.y = y
+
+    def distance(self, other: Point) -> float:
+      return (
+        (other.x - self.x) ** 2 + (other.y - self.y) ** 2
+      ) ** 0.5
+```
+
+- _**Type hint**_ ...
+- \+ analyse statique du code
+
 # Manipuler des tableaux de valeurs
 
 :::{.small}
@@ -644,11 +933,12 @@ print(my_matrix[2, 1])
 
 ## Tableaux de valeurs en Python
 
-Ni le type `list` (conteneur hétérogène) ni le type natif `array`  
-(tableau typé) ne supportent xxx...
-La solution : la bibliothèque `NumPy` ([numpy.org](https://numpy.org/)).
+Les types natifs `list` (conteneur hétérogène) et `array`  
+(tableau typé) ne supportent les opérations vectorisées comme R.  
 
-<img src="images/logo-numpy.svg" style="position: absolute; width: 180px !important; height: auto !important; right: -10px; top: -10px;"/>
+- La solution : la bibliothèque `NumPy` ([numpy.org](https://numpy.org/)).
+
+<img src="images/logo-numpy.svg" style="position: absolute; width: 150px !important; height: auto !important; right: -10px; top: 160px;"/>
 
 ```{python}
 #| echo: true
@@ -674,10 +964,11 @@ Aller sur https://numpy.org/ et
 :::{.small}
 
 Nous allons voir, dans chacun des deux langages, comment ouvrir et préparer un jeu de données pour y effectuer plusieurs traitements courants :
+
 - analyse statistique
 - traitement automatique de la langue naturelle
--
--
+- apprentissage automatique et apprentissage profond
+- visualisation
 
 :::
 
@@ -700,6 +991,8 @@ On peut importer les données dans des dataframes depuis différents types de fo
 
 ## R et dataframes (2)
 
+- Type natif `data.frame`
+
 ```{r}
 #| echo: true
 df <- data.frame(
@@ -716,7 +1009,23 @@ str(df)
 
 ## R et dataframes (3)
 
+- Utilisation des bibliothèques du `tidyverse` avec `tibble` (*a modern reimagining of the data.frame*)
 
+```{r}
+library(tibble)
+
+df <- tibble(
+  emp_id = c(1:5), 
+  emp_name = c("Rick","Dan","Michelle","Ryan","Jane"),
+  salary = c(623.3,515.2,611.0,729.0,843.25), 
+  start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11", "2015-03-27")),
+)
+
+print(df)
+str(df)
+```
+
+-
 
 ## Python et dataframes (1)
 
@@ -749,126 +1058,6 @@ print(df.dtypes)
 
 :::
 
-## Python et dataframes (3)
-
-## A
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-#### Depuis R
-
-```{r}
-#| echo: true
-library(dplyr)
-library(readr)
-
-chipo <- read_tsv(
-    'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv')
-
-head(chipo)
-```
-
-:::
-
-::: {.column width="50%"}
-
-
-#### Depuis Python
-
-```{python}
-#| echo: true
-import pandas as pd
-pd.set_option('display.max_columns', 5)
-
-chipo = pd.read_csv(
-    'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv',
-    sep = '\t',
-)
-
-chipo.head().to_html()
-```
-
-:::
-
-::::
-
-
-## Load the data
-
-Load the data from the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md) repository:
-
-```{r}
-#| label: read-data
-#| echo: true
-#| message: false
-#| cache: true
-lemurs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-24/lemur_data.csv')
-```
-## Data wrangling
-
-Filter the data to only look at adult male Collared Brown Lemurs, and extract only the age and weight columns:
-
-```{r}
-#| label: wrangling
-#| echo: true
-#| message: false
-#| output-location: slide
-library(dplyr)
-library(knitr)
-lemur_data <- lemurs %>% 
-  filter(taxon == "ECOL",
-         sex == "M",
-         age_category == "adult") %>% 
-  select(c(age_at_wt_mo, weight_g)) %>% 
-  rename(Age = age_at_wt_mo, 
-         Weight = weight_g)
-kable(head(lemur_data))
-```
-
-## Modelling
-
-Fit a linear model using Python:
-
-```{python}
-#| label: modelling
-#| echo: true
-#| message: false
-lemur_data_py = r.lemur_data
-
-import statsmodels.api as sm
-y = lemur_data_py[["Weight"]]
-x = lemur_data_py[["Age"]]
-x = sm.add_constant(x)
-mod = sm.OLS(y, x).fit()
-lemur_data_py["Predicted"] = mod.predict(x)
-lemur_data_py["Residuals"] = mod.resid
-```
-
-## Plot the residuals
-
-```{r}
-#| label: plotting
-#| echo: true
-#| output-location: slide
-#| message: false
-#| fig-align: center
-#| fig-alt: "Scatter plot of predicted and residual values for the fitted linear model."
-library(reticulate)
-library(ggplot2)
-lemur_residuals <- py$lemur_data_py
-ggplot(data = lemur_residuals,
-       mapping = aes(x = Predicted,
-                     y = Residuals)) +
-  geom_point(colour = "#2F4F4F") +
-  geom_hline(yintercept = 0,
-             colour = "red") +
-  theme(panel.background = element_rect(fill = "#eaf2f2",
-                                        colour = "#eaf2f2"),
-        plot.background = element_rect(fill = "#eaf2f2",
-                                       colour = "#eaf2f2"))
-```
 
 ## Récupérer un vrai jeu de données
 
@@ -880,14 +1069,14 @@ ggplot(data = lemur_residuals,
 #| echo: true
 import pandas as pd
 
-housing_data = pd.read_csv('static/home_data.csv')
+house_sales = pd.read_csv('static/home_data.csv')
 ```
 
 ## R
 
 ```{r}
 #| echo: true
-housing_data <- readr::read_csv('static/home_data.csv')
+house_sales <- readr::read_csv('static/home_data.csv')
 ```
 
 ## Data
@@ -895,12 +1084,17 @@ housing_data <- readr::read_csv('static/home_data.csv')
 :::{.small}
 
 ```{r}
-kable(head(housing_data))
+library(knitr)
+kable(head(house_sales))
 ```
 
 :::
 
 :::
+
+Source : [House Sales in King County, USA](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction)
+
+- [Voir le notebook Jupyter correspondant](#)
 
 ## Statistiques descriptives
 
@@ -914,14 +1108,14 @@ pd.set_option('display.max_columns', 12)
 
 ```{python}
 #| echo: true
-housing_data.describe()
+house_sales.describe()
 ```
 
 ## R
 
 ```{r}
 #| echo: true
-summary(housing_data)
+summary(house_sales)
 ```
 
 :::
@@ -1000,11 +1194,11 @@ suivent la même logique :
 
 <img src="images/logo_geopandas.svg" />
 
-- Cartographie : 
+- Cartographie : [**cartopy**](), [**PyGMT**](), [] (mais moins aboutis que `mapsf` pour les cartes généralement réalisées en SHS)
 
-## *Web scrapping*
+## *Web scraping*
 
-## *Web scrapping* / Python
+## *Web scraping* / Python
 
 ## Pour résumer...
 
@@ -1026,30 +1220,26 @@ suivent la même logique :
 | Géospatial                        | GeoPandas, Shapely,          | sf, terra          |
 |                                   | Rasterio                     |                    |
 +-----------------------------------+------------------------------+--------------------+
-| Web scrapping                     | BeautifoulSoup4, Selenium,   |                    |
+| Web scraping                      | BeautifoulSoup4, Selenium,   | Rselenium, Rvest   |
 |                                   | Scrapy                       |                    |
 +-----------------------------------+------------------------------+--------------------+
-| Traitement automatisé de la       | Spacy                        |                    |
+| Traitement automatisé de la       | Spacy, NLTK                  | Spacyr, NLP        |
 | langue                            |                              |                    |
 +-----------------------------------+------------------------------+--------------------+
-| Programmation lettrée             | *Tie*                        |  *Tie*             |
+| Programmation lettrée             | Jupyter notebooks, Quarto    | Rmarkdown, Quarto  |
 +-----------------------------------+------------------------------+--------------------+
 
 :::
 
-# Programmer pour autre chose que la science des données
+## Pour résumer...
 
-:::{.small}
-Quand on prend gout à la programmation, il n'est pas rare de vouloir automatiser différents types de tâches
-(opération de maintenance sur une machine perso. ou sur un serveur, ...).
-:::
+<br>
 
-## Python
+- Deux écosystèmes très actifs pour être à jour (ou à la pointe) dans les différents domaines scientifiques
 
-Un des points sur lequel Python est particulièrement performant ... communication avec l'OS...
+- De nombreuses bibliothèques sont disponibles dans les deux langages (Selenium, Tesseract, Spacy)
 
-## R
-
+- La possibilité d'utiliser R depuis Python et Python depuis R
 
 
 # Valoriser ses résultats
@@ -1066,32 +1256,264 @@ Plusieurs manières de valoriser les scripts écrits dans les deux langages ains
 
 ## *Notebooks* et programmation lettrée
 
+- Les deux langages ont en commun une partie de l'écosystème :
 
-## Publication sur le Web
+  * Rmarkdown (pour R mais permet d'utiliser Python)
 
-- R : [**Shiny**]()
+  * Jupyter notebooks (initalement pour Python mais permet d'utiliser R)
 
-- Python : [**Bokeh** (et *Bokeh Server*)](), [**Gradio**](https://www.gradio.app/)
+  * Quarto (permet d'utiliser R et Python - utilisé pour cette présentation)
+
+## Quarto
+
+
+## Example Interopérabilité R / Python avec Quarto
+
+### Load the data
+
+Load the data from the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md) repository:
+
+```{r}
+#| label: read-data
+#| echo: true
+#| message: false
+#| cache: true
+lemurs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-24/lemur_data.csv')
+```
+
+## Example Interopérabilité R / Python avec Quarto
+
+### Data wrangling (with R)
+
+Filter the data to only look at adult male Collared Brown Lemurs, and extract only the age and weight columns:
+
+```{r}
+#| label: wrangling
+#| echo: true
+#| message: false
+#| output-location: slide
+library(dplyr)
+library(knitr)
+
+lemur_data <- lemurs %>% 
+  filter(taxon == "ECOL",
+         sex == "M",
+         age_category == "adult") %>% 
+  select(c(age_at_wt_mo, weight_g)) %>% 
+  rename(Age = age_at_wt_mo, 
+         Weight = weight_g)
+kable(head(lemur_data))
+```
+
+## Example Interopérabilité R / Python avec Quarto
+
+### Modelling (with Python)
+
+Fit a linear model using Python:
+
+```{python}
+#| label: modelling
+#| echo: true
+#| message: false
+lemur_data_py = r.lemur_data
+
+import statsmodels.api as sm
+y = lemur_data_py[["Weight"]]
+x = lemur_data_py[["Age"]]
+x = sm.add_constant(x)
+mod = sm.OLS(y, x).fit()
+lemur_data_py["Predicted"] = mod.predict(x)
+lemur_data_py["Residuals"] = mod.resid
+```
+
+## Example Interopérabilité R / Python avec Quarto
+
+### Plot the residuals (with R)
+
+```{r}
+#| label: plotting
+#| echo: true
+#| output-location: slide
+#| message: false
+#| fig-align: center
+#| fig-alt: "Scatter plot of predicted and residual values for the fitted linear model."
+library(reticulate)
+library(ggplot2)
+lemur_residuals <- py$lemur_data_py
+ggplot(data = lemur_residuals,
+       mapping = aes(x = Predicted,
+                     y = Residuals)) +
+  geom_point(colour = "#2F4F4F") +
+  geom_hline(yintercept = 0,
+             colour = "red") +
+  theme(panel.background = element_rect(fill = "#eaf2f2",
+                                        colour = "#eaf2f2"),
+        plot.background = element_rect(fill = "#eaf2f2",
+                                       colour = "#eaf2f2"))
+```
+
+## Publication sur le Web d'interfaces interactives de visualisation
+
+<br>
+
+- R : [**Shiny**](https://shiny.posit.co/) (aussi pour [Python](https://shiny.rstudio.com/py/docs/overview.html))
+
+- Python : [**Bokeh** (et *Bokeh Server*)](https://docs.bokeh.org/en/latest/docs/user_guide/server.html)
+
+- [Exemple d'application Shiny (R)](https://gallery.shinyapps.io/051-movie-explorer/) vs. [Exemple d'application Bokeh Server](https://demo.bokeh.org/movies)
+
+<br>
+
+- Python : [**Gradio**](https://www.gradio.app/) - *Build & share delightful machine learning apps* (...mais aussi des dashboards interactifs à la Shiny)
+
 
 ## Développement d'application Web
 
-- Différentes solutions en R : `servr`, 
+:::{.medium}
 
-- Mais Python est un langage de premier choix pour le développement Web côté serveur (sites Web dynamiques, API REST, etc.): Flask, Django, FastAPI, etc.
+- En R, principalement `servr` (basé sur `httpuv`)
+
+- Python est un langage de premier choix pour le développement Web côté serveur (sites Web dynamiques, API REST, etc.): **Flask**, **Django**, **FastAPI**, etc., etc.
+  \+ *template engine* (Jinja 2) + connexion à bases de données + etc. etc.
+
+- Ces frameworks tirent profit de la syntaxe épurée du Python et des ses capacités en termes de *metaprogramming* pour permettre d'écrire des serveurs Web personnalisés
+
+- Déployment facile.
+  
+- Exemple en SHS : [Magrit](https://magrit.cnrs.fr)
+
+- Exemple en SHS : [Ruitor](https://github.com/ANRChoucas/Ruitor) (par Mattia Bunel dans le cadre de sa thèse : programmation orienté ontologie, manipulation de rasters + API Web)
+
+:::
+
+## Développement d'application Web / FastAPI
+
+:::{.medium}
+
+```python
+from typing import Union
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: Union[bool, None] = None
+
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Union[str, None] = None):
+    return {"item_id": item_id, "q": q}
+
+
+@app.put("/items/{item_id}")
+def update_item(item_id: int, item: Item):
+    return {"item_name": item.name, "item_id": item_id}
+```
+
+:::
+
+## Développement d'application Web / FastAPI
+
+<div class="center">
+<img src="images/fastapi-docs.png" style="width: 90%; border: solid 1px black" />
+</div>
 
 
 ## Développement d'application Desktop
 
+<br>
+
+- **PyQt** / **PySide** : pour utiliser la bibliothèque **Qt** pour développer des applications de bureau
+
+- **Tkinter**, **PySimpleGUI** ([exemple](https://pysimplegui.trinket.io/demo-programs#/demo-programs/intro-to-this-page))
+
+- Exemple en SHS : Besoin d'une petite interface pour faciliter l'import des données (avant un traitement effectué en R ou en Python) pour
+  que les chercheurs d'un projet qui n'utilisent pas la programmation puissent effectuer eux-mêmes leurs analyses...
 
 
 ## Développement d'application mobiles (Android / iOS)
 
-Certains projets 
+- Même en SHS certains projets peuvent déboucher sur le développement d'une application mobile.
+
+- Ou alors pour vendre une application mobile sur le Google Play Store et gagner des millions...
 
 En Python :
-- [https://beeware.org/](beeware.org) - Application multiplateforme (Windows, Linux, Mac OS, Android, iOS, Web)
-- [Kivy](https://kivy.org/doc/stable/guide/android.html)
 
+- [Beeware](https://beeware.org/) - Applications multiplateformes (Windows, Linux, Mac OS, Android, iOS, Web)
+- [Kivy](https://kivy.org/doc/stable/guide/android.html) - Applications multiplateformes (Windows, Linux, Mac OS, Android, iOS)
+
+
+# Programmer pour autre chose que la science des données, programmer dans d'autres environnements, etc.
+
+:::{.small}
+Quand on prend gout à la programmation, il n'est pas rare de vouloir automatiser différents types de tâches
+(opération de maintenance sur une machine perso. ou sur un serveur, récupération de données du Web, etc.)
+ou de voir plus loin que l'exécution de scripts dédiés à l'analyse de données...
+:::
+
+## Python, un langage polyvalent
+
+- Un des points sur lequel Python est particulièrement performant ... communication avec l'OS...
+
+- Comme langage de script dans de nombreuses applications : ESRI ArcGIS, Autodesk Maya, Inkscape, Blender, QGIS, etc.
+
+## Python dans QGIS
+
+:::{.medium}
+
+- Python est le langage de choix dans l'application SIG de bureau QGIS :
+
+  - Exécuter des commandes dans la console Python
+  - Créer des plugins
+  - Exécuter automatiquement du code au démarrage de QGIS
+  - Créer des algorithmes de traitement pour la boire à outils *geoprocessing*, des fonctions pour les *expressions QGIS*
+  - Créer des applications personnalisées basées sur l'API QGIS
+
+<br>
+- Exemple : 
+- Exemple : [Le plugin DistanceCartogram](https://plugins.qgis.org/plugins/dist_cartogram/)
+
+:::
+
+## Python dans Inkscape
+
+:::{.medium}
+
+- La majorité des extensions de Inkscape sont des scripts Python  
+  (d'après [https://inkscape.org/fr/developper/extensions/](https://inkscape.org/fr/developper/extensions/)),  
+  et il existe des ressources pour faciliter l'écriture de scripts Python pour Inkscape :
+
+<div class="center">
+<img src="images/inkscape_scripting.png" />
+<p>Source: <a href="https://inkscape.org/~pakin/%E2%98%85simple-inkscape-scripting">https://inkscape.org/~pakin/%E2%98%85simple-inkscape-scripting</a></p>
+</div>
+
+:::
+
+## Python dans Blender
+
+:::{.medium}
+
+- Blender : un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D
+
+- Intègre une console Python, permet d'interagir avec de nombreux aspects de Blender dont notamment l’animation, le rendu, l’import et l’export, la création d’objet et l'éxécution automatisée de tâches répétitives
+
+- Pour en savoir plus: [https://docs.blender.org/api/current/info_overview.html](https://docs.blender.org/api/current/info_overview.html)
+
+<div class="center">
+<img src="https://tabreturn.github.io/img/aqitbcc01/getting-started-blender.png" style="width: 400px" />
+<p>Source : <a href="https://tabreturn.github.io/code/blender/python/2020/06/06/a_quick_intro_to_blender_creative_coding-part_1_of_3.html">A Quick Intro to Blender Creative Coding – part 1 of 3</a></p>
+</div>
+
+:::
 
 
 # Conclusion
@@ -1134,7 +1556,7 @@ En Python :
 +-----------------------------------+------------------------------+--------------------+
 | Learning curve                    |                              |  Win (?)           |
 +-----------------------------------+------------------------------+--------------------+
-| Web scrapping                     | **Win**                      |                    |
+| Web scraping                     | **Win**                      |                    |
 +-----------------------------------+------------------------------+--------------------+
 | Statistique                       |                              |  **Win**           |
 +-----------------------------------+------------------------------+--------------------+
@@ -1161,9 +1583,48 @@ Statistiques spatiales, algo spécifique à l'écologie, etc... R probablement
 
 :::
 
-## Mon avis sur la question...
+## Mon avis sur la question...
 
+:::{.medium}
+
+<br>
+
+- **Python vs. R**, lequel apprendre... *en premier* ?
+
+- Pourquoi connaitre les 2 ?
+
+<br>
+
+- Quels types de données ? Pour quel(s) besoin(s) ? À quelle(s) échéance(s) ?
+
+  * *Data collection*
+
+  * *Data analysis*
+
+  * 
+
+- Qu'utilisent vos collègues (bureau / couloir) et la communauté dans laquelle vous vous inscrivez ?
+
+
+:::
 
 ## Un dernier mot...
 
-Utiliser le langage qui vous plait le plus... prendre du plaisir en développant est important !
+<br>
+
+- Utiliser le langage qui vous *hype* le plus... prendre du plaisir en développant est important !
+
+- Appendre à transformer ses idées en logique "informatique" plutôt que de se formaliser sur (ou se fâcher avec)
+  la syntaxe de l'un ou l'autre des langages
+
+
+
+# Analyse comparative Python / R pour les SHS
+
+<br>
+<div style="text-align: center;">
+<img src="images/logo-python-vs-r.png" style="margin: auto; width: 600px; height: auto;" />
+<p>16 mai 2023</p>
+<p>Matthieu Viry</p>
+</div>
+
