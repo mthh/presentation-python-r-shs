@@ -49,6 +49,15 @@ prefer-html: true
 <img src="images/youtube-r-python.png" style="margin: auto; width: 960px; height: auto; border: solid 1px black;" />
 </div>
 
+## Pourquoi comparer Python et R
+
+<br>
+
+<div style="text-align: center;">
+<img src="images/google-hits.png" style="margin: auto; width: 900px; height: auto; border: solid 1px black;" />
+</div>
+
+
 ## Pourquoi vous posez-vous la question ?
 
 - Un **besoin spécifique** en terme de manipulation de données ? **Curiosité** ? Se conforter dans son choix ? **Procrastination** à l'apprentissage de la programmation ?
@@ -62,7 +71,7 @@ prefer-html: true
 
 :::{.medium}
 
-- Apprentissage du **C** vers 14-15 ans (pas réutilisé passé mes 17-18 ans)
+- Apprentissage du **C** vers 14 ans (pas réutilisé passé 17 ans)
 
 - Licence & Master en géographie (apprentissage de **R** pour la statistique)
 
@@ -200,7 +209,7 @@ acquis de nombreuses compétences, plutôt que d'acquérir une expertise en se c
 
 <br>
 
-- Julia ? Haskel ? Rust ? Java ?
+- *Julia ? Haskel ? Rust ? Java ?*
 
 :::{.notes}
 
@@ -288,7 +297,7 @@ Save workspace image? [y/n/c]: n
 
 - Centré autour de l'interpréteur [**R**](https://www.r-project.org/)
 
-- Un IDE avec une position quasi-hégémonique : [**R studio**](https://posit.co/products/open-source/rstudio/)
+- Un IDE avec une position quasi-hégémonique : [**RStudio**](https://posit.co/products/open-source/rstudio/) - Plus récemment, également des utilisateurs de [VS Code](https://code.visualstudio.com/)
 
 <div class="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/RStudio_IDE_screenshot.png" style="width: 750px"/>
@@ -335,7 +344,7 @@ qui permet de créer des environnements Python isolés pour différents projets.
 
 ## Écosystème Python
 
-- Plusieurs IDE appréciés par les utilisateurs de Python : **Spyder** (IDE "scientifique", interface comparable à R Studio),
+- Plusieurs IDE appréciés par les utilisateurs de Python : **Spyder** (IDE "scientifique", interface comparable à RStudio),
   **PyCharm** (logiciel propriétaire, plutôt pour développer des bibliothèques), **Jupyter Lab**, **Visual Studio Code**.
 
 
@@ -451,6 +460,8 @@ En revanche, à l'inverse de Python, la documentation de tous les packages addit
 
 ## Syntaxe Python
 
+<br><br>
+
 ```{python}
 #| error: true
 #| echo: true
@@ -468,6 +479,8 @@ print(cv([5, 6, 3, 8, 9, 12]))
 ```
 
 ## Syntaxe R
+
+<br><br>
 
 ```{r}
 #| error: true
@@ -521,6 +534,8 @@ for item in my_list:
 ```
 
 ## Python et l'indentation du code...
+
+<br>
 
 - Respecter les règles d’indentations est *obligatoire* en Python.
 
@@ -621,6 +636,8 @@ Il s'agit d'une question de gout, et ça dépend aussi des expressions à encha�
 
 <br>
 
+:::{.medium}
+
 - Depuis la sortie du package `magrittr` (en 2014), il existe un opérateur `pipe` s'écrivant `%>%`, couramment utilisé
   dans le *tidyverse*
 
@@ -638,8 +655,9 @@ lemur_data <- lemurs %>%
 
 - Des différences existent toutefois entre `|>` et `%>%`
 
-- En Python on ne trouvera pas de nouveaux opérateurs de ce type, définis par des packages
+- En Python on ne trouvera pas de nouveaux opérateurs de ce type (définis par des packages)
 
+:::
 
 # *Data structures* natives
 
@@ -683,6 +701,8 @@ my_list = ['a', 12, (2.349014, 48.864716), { "foo": 42 }]
 
 ## Python *(classes)*
 
+<br>
+
 Comme il s'agit d'un langage orienté-objet, il est également possible de définir des classes, permettant de facilement modéliser des catégories d'objets...
 
 ```{python}
@@ -699,6 +719,9 @@ class Point:
 ```
 
 ## Python *(classes)*
+
+<br>
+<br>
 
 Instanciation et utilisation :
 
@@ -754,13 +777,15 @@ df <- data.frame(
 
 ## R *(classes)*
 
+<br>
+
 - R est aussi un langage orienté-objet
 
 - Mais plusieurs APIs en compétition pour faire de la programmation orientée-objet en R (*S3*, *R6*, *S4*)
 
 - Surtout utilisés par les développeurs de bibliothèques et/ou les développeurs avancés en R.
 
-- L'API présenté aux utilisateurs semble plus *fonctionnelle* qu'*orientée-objet*
+- L'API présentée aux utilisateurs semble plus *fonctionnelle* qu'*orientée-objet*
 
 
 ## R *(classes)*
@@ -797,6 +822,9 @@ setMethod("y<-", "Point", function(pt, value) {
 
 ## R *(classes)*
 
+<br>
+
+
 Instanciation et utilisation :
 
 ```R
@@ -825,7 +853,9 @@ print(my_vec)
 print(other_vec)
 ```
 
+:::{.medium}
 Pour en savoir plus sur ce point [*Advanced R* (Hadley Wickham)](https://bookdown.dongzhuoer.com/hadley/adv-r/copy-on-modify.html)
+:::
 
 ## Python
 
@@ -850,9 +880,13 @@ print(i) # 6
 print(j) # 7
 ```
 
+:::{.medium}
 Pour en savoir plus sur ce point : [Documentation officielle -  Questions fréquemment posées sur Python](https://docs.python.org/fr/3/faq/programming.html#why-did-changing-list-y-also-change-list-x)
+:::
 
 ## Indices
+
+<br>
 
 - En Python les indices de liste commencent à 0 :
 
@@ -915,8 +949,8 @@ Les premières différences notables entre Python et R...
 
 ## Tableaux de valeurs en R
 
-Le type `vector` est adapté pour stocker des tableaux de valeurs (du même type) unidimensionnel
-et le type `matrix` est adapté pour stocker des tableaux de valeurs (du même type) bidimensionnel.
+Le type `vector` est adapté pour stocker des tableaux de valeurs (du même type) unidimensionnels
+et le type `matrix` est adapté pour stocker des tableaux de valeurs (du même type) bidimensionnels.
 
 ```{r}
 #| echo: true
@@ -991,6 +1025,8 @@ On peut importer les données dans des dataframes depuis différents types de fo
 
 ## R et dataframes (2)
 
+:::{.medium}
+
 - Type natif `data.frame`
 
 ```{r}
@@ -1007,11 +1043,16 @@ print(df)
 str(df)
 ```
 
+:::
+
 ## R et dataframes (3)
+
+:::{.medium}
 
 - Utilisation des bibliothèques du `tidyverse` avec `tibble` (*a modern reimagining of the data.frame*)
 
 ```{r}
+#| echo: true
 library(tibble)
 
 df <- tibble(
@@ -1025,15 +1066,24 @@ print(df)
 str(df)
 ```
 
--
+:::
 
 ## Python et dataframes (1)
 
 <img src="images/logo-pandas.svg" style="width: 220px !important; height: auto;" />
 
-- On utilisera ...
+:::{.medium}
 
-- Blablabla
+- On utilisera généralement la bibliothèque [**Pandas**](https://pandas.pydata.org/) (*a fast, powerful, flexible and easy to use open source data analysis and manipulation tool,
+built on top of the Python programming language*).
+
+- Tout le nécessaire pour importer des données (CSV, HDF5, XML, Excel, BD relationnelle, etc.), les manipuler (*group by*, sélection, filtrage, etc.), les combiner (*merge*, *join*, *concatenate*, *compare*), etc.
+
+- Permet de travailler avec des séries temporelles
+
+- [Comparaison de l'API avec R dans la documentation](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html)
+
+:::
 
 ## Python et dataframes (2)
 
@@ -1058,10 +1108,21 @@ print(df.dtypes)
 
 :::
 
+## Python et dataframes (3)
+
+<br>
+<div class="center">
+<img src="images/logo-polars.svg" style="width: 300px !important; height: auto;" />
+</div>
+
+
+- D'autres bibliothèques prometteuses sont en cours de développement : [**Polars**](https://www.pola.rs/)
+
+- Des bindings R existent aussi : [**rpolars**](https://rpolars.github.io/index.html)
 
 ## Récupérer un vrai jeu de données
 
-::: {.panel-tabset}
+::: {.panel-tabset .medium}
 
 ## Python
 
@@ -1092,10 +1153,16 @@ kable(head(house_sales))
 
 :::
 
+:::{.medium}
+
 Source : [House Sales in King County, USA](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction)
 
-- [Voir le notebook Jupyter correspondant](#)
+- Voir les sorties HTML des notebooks [Jupyter](./notebooks/HouseSales.html) et [Rmarkdown](notebooks/house_sales.html) correspondant "House Sales in King County".
 
+:::
+
+
+<!--
 ## Statistiques descriptives
 
 ::: {.panel-tabset}
@@ -1119,32 +1186,93 @@ summary(house_sales)
 ```
 
 :::
+-->
+
+## Statistiques bivariées et multivariées, en Python
+
+<div class="center">
+<img src="images/logos-sm-scikit-scipy.png" />
+</div>
+
+- [**Statsmodels**](https://www.statsmodels.org/) (Anova, régression linéaire, régression logistique, etc.)
+
+- [**Scikit-learn**](https://scikit-learn.org/), développée par des membres de l'INRIA
+
+- [Module *stats* de **SciPy**](https://docs.scipy.org/doc/scipy/tutorial/stats.html), [Module *cluster* de **SciPy**](https://docs.scipy.org/doc/scipy/reference/cluster.html), etc.
 
 
-## Statistiques bivariées
+## Apprentissage automatique ou profond, en Python
+
+<div class="center">
+<img src="images/logos-ML.png" style="width: 38%" />
+</div>
+
+:::{.medium}
+
+- [**Scikit-learn**](https://scikit-learn.org/) (*Classification, Regression, Clustering, Dimensionality reduction, Model selection, Preprocessing*)
+
+- [**TensorFlow**](https://www.tensorflow.org/?hl=fr) (*"Créez des modèles de machine learning pour la production avec TensorFlow"*, développé par Google)
+
+- [**Keras**](https://keras.io/) (*"Deep learning for humans"* - pour interagir avec des algorithmes de réseaux de neurones profonds et d'apprentissage automatique, dont ceux de TensorFlow)
+
+- [**PyTorch**](https://pytorch.org/) (*An open source machine learning framework that accelerates the path from research prototyping to production deployment*)
+
+:::
+
+## Apprentissage automatique ou profond, en R
 
 
-## Apprentissage automatique
+<div class="center">
+<img src="images/logo-mlr3.svg" style="width: 200px"/>
+</div>
 
-## Apprentissage automatique / Python
+:::{.medium}
 
-- Une bibliothèque de référence : scikit learn
+- [**mlr3**](https://mlr3.mlr-org.com/) (*"Efficient, object-oriented programming on the building blocks of machine learning"*)
 
-- **TensorFlow** (développé par Google)
-
-- **Keras** (pour interagir avec des algorithmes de réseaux de neurones profonds et d'apprentissage automatique, dont ceux de TensorFlow)
-
-
-## Apprentissage automatique / R
-
-- **mlr3**
+- **nnet** (fournis avec R base)
 
 - **TensorFlow for R** (mais nécessite une installation Python avec TensorFlow)
 
+- **Keras**, **Torch**
+
+- En savoir plus sur le site du CRAN : [https://cran.r-project.org/web/views/MachineLearning.html](https://cran.r-project.org/web/views/MachineLearning.html)
+
+:::
 
 ## Visualisation / R
 
-- Utilisation des fonctionnalité de **R base** ou de bibliothèques comme **ggplot2**.
+<br>
+
+- Utilisation des fonctionnalité de **R base** ou de bibliothèques comme **ggplot2** (une implémentation de la *grammaire des graphiques**)
+
+```{r}
+data(mpg, package = "ggplot2")
+mpg <- transform(mpg, cyl = factor(cyl), trans = factor(trans), drv = factor(drv), fl = factor(fl), class = factor(class))
+levels(mpg$trans) <- c(rep("auto", 8), rep("manual", 2))
+```
+
+```{r}
+#| echo: true
+library(ggplot2)
+
+ggplot(mpg, aes(x = drv, y = hwy)) +
+  geom_violin(color = NA, fill = "lightgray", alpha = 0.5, trim = FALSE) +
+  geom_boxplot(width = 0.2, varwidth = TRUE, outlier.shape = NA, fill = NA) +
+  geom_jitter(width = 0.1, height = 0, alpha = 0.2)
+```
+
+:::{.notes}
+
+Dans la syntaxe ci-dessus
+
+- ggplot() spécifie le jeu de données <data.name> à analyser. <data.name> doit être un objet de type data frame.
+
+- aes() spécifie les variables à visualiser et associe à chaque variable un emplacement ou un rôle: les axes (x, y), couleur (color), forme (shape), taille (size), etc.; voir la Section 9.2 pour plus à ce sujet.
+
+- geom_<xxx>(), où <xxx> doit être remplacée par le nom d’une forme géométrique, spécifie le type de représentation graphique souhaitée: point_point() pour tracer des points, geom_line() pour des lignes, point_bar() pour des barres, geom_histogram() pour un histogramme, point_boxplot() pour un boxplot, geom_density() pour une densité, geom_smooth() pour une courbe de tendance, etc.; voir la Section 9.3 pour plus à ce sujet.
+
+:::
 
 ## Visualisation / Python
 
@@ -1163,12 +1291,31 @@ summary(house_sales)
 - Totalement compatible avec la stack NumPy-Pandas-Jupyter-etc.
 
 
-## Visualisation
+## Visualisation / Ponts entre R et Python
 
-- Des bibliothèques sont disponibles dans les 2 langages : [**Plotly**](https://plotly.com/) ()
+<br>
+
+- Des bibliothèques sont disponibles dans les 2 langages : [**Plotly**](https://plotly.com/)
+
+- **Bokeh** initialement pour Python mais disponible en R
+
+- Une implémentation de la grammaire des graphiques (*à la ggplot2*) en Python avec [**plotnine**](https://plotnine.readthedocs.io/): 
+
+```Python
+from plotnine import ggplot, geom_point, aes, stat_smooth, facet_wrap
+from plotnine.data import mtcars
+
+(ggplot(mtcars, aes("wt", "mpg", color="factor(gear)"))
+ + geom_point()
+ + stat_smooth(method="lm")
+ + facet_wrap("~gear"))
+ ```
 
 ## Géospatial (vectoriel)
 
+<br>
+
+:::{.medium} 
 Même si plusieurs solutions concurrentes existent dans chacun des 2 langages, les bibliothèques les plus utilisés dans les 2 langages
 suivent la même logique :
 
@@ -1180,13 +1327,15 @@ suivent la même logique :
 
 - étendre un type "data frame" pour permettre la présence d'une colonne de géométries et présence de traitement appropriés
 
+:::
+
 ## Géospatial (vecteur) / R
 
 - Package **sf**, qui étend le type `data.frame` de R base ou le type `tibble`
 
 <img src="images/logo-sf.gif" />
 
-- Cartographie : [**mapsf**]() ou [**tmap**]()
+- Cartographie : [**mapsf**](https://riatelab.github.io/mapsf/) ou [**tmap**](https://r-tmap.github.io/tmap/)
 
 ## Géospatial / Python
 
@@ -1194,11 +1343,66 @@ suivent la même logique :
 
 <img src="images/logo_geopandas.svg" />
 
-- Cartographie : [**cartopy**](), [**PyGMT**](), [] (mais moins aboutis que `mapsf` pour les cartes généralement réalisées en SHS)
+- Cartographie : [**cartopy**](https://scitools.org.uk/cartopy/docs/latest/), [**PyGMT**](https://www.pygmt.org/), [**GeoView**](https://geoviews.org/) (mais moins aboutis que `mapsf` pour les cartes généralement réalisées en SHS)
 
-## *Web scraping*
+## Géospatial / Analyse spatiale
+
+<br>
+
+- [**PySAL**](http://pysal.org/pysal/) : *Python Spatial Analysis Library* (Autocorrélation spatiale, analyse des inégalités, ségrégation, analyse de réseaux, etc.)
+
+<br>
+
+- [**spdep**](https://r-spatial.github.io/spdep/), [**spatialreg**](https://r-spatial.github.io/spatialreg/), [**gstat**](https://github.com/r-spatial/gstat/) en R
+
+
+## Géospatial / Raster
+
+<br>
+
+- [**rasterio**](https://rasterio.readthedocs.io/) (va permettre d'accéder aux données sous forme de tableau NumPy)
+
+<br>
+
+- [**terra**](https://rspatial.org/pkg/index.html) (I/O, *spatial prediction*, )
+
+
+## Traitement automatique du langage naturel
+
+- Python est devenu le langage le plus populaire pour la recherche et le développement d'applications TAL, en partie grâce à sa lisibilité,
+  à son vaste écosystème d'apprentissage automatique et à ses API pour l'apprentissage profond.
+
+- [**SpaCy**](https://spacy.io/) en Python / [**Spacy**](http://spacyr.quanteda.io/), un *wrapper* en R
+
+- [**NLTK**](https://www.nltk.org/) en Python
+
+- [**Tidytext**](https://juliasilge.github.io/tidytext/) en R
 
 ## *Web scraping* / Python
+
+- Python est souvent cité comme un langage de choix pour le *Web scraping*
+
+## Web Sémantique / Ingénierie de la connaissance
+
+<div class="center">
+<img src="images/sw-w3c.svg" style="width: 40%"/>
+</div>
+
+- Pour récupérer des données sous forme de triplets RDF... mais également pour modélisation ontologique
+
+- Python : [**RDFLib**](https://rdflib.dev/), [**owlready**](https://owlready2.readthedocs.io/en/latest/)
+
+- Différentes initiatives en R ([**rdflib**](https://docs.ropensci.org/rdflib/), **ontologyPlot**, etc.), moins abouties à mon gout
+
+- Le langage Java reste probablement le langage de choix (*Jena*, *OWLAPI*, *RDF4J*, différents moteurs d'inférence, etc.)
+
+:::{.notes}
+
+En informatique et en science de l'information, une ontologie est un modèle de données contenant des concepts et relations permettant de modéliser un ensemble de connaissances dans un domaine donné.
+
+Le terme est utilisé par analogie avec le concept philosophique d'ontologie, qui est l'étude de l'être en tant qu'être, l'étude des propriétés générales de ce qui existe.
+
+:::
 
 ## Pour résumer...
 
@@ -1210,37 +1414,44 @@ suivent la même logique :
 | Manipulation de données           | Pandas, polars               | R base, tibble,    |
 |                                   |                              | data.table         |
 +-----------------------------------+------------------------------+--------------------+
-| Statistique                       | statsmodels                  | R base             |
+| Statistique                       | Statsmodels, Scipy           | R base             |
 +-----------------------------------+------------------------------+--------------------+
-| Apprentissage automatique         | Scikit learn                 | mlr3               |
+| Apprentissage automatique         | Scikit-learn,                | mlr3, nnet,        |
+| ou profond                        | Tensorflow, PyTorch          | Tensorflow         |
 +-----------------------------------+------------------------------+--------------------+
-| Visualisation                     | Matplotlib, Bokeh, Plotly    | R base, Plotly     |
-|                                   |                              |                    |
+| Visualisation                     | Matplotlib, Seaborn,         | R base, ggplot2,   |
+|                                   | Bokeh, Plotly                | Bokeh, Plotly      |
 +-----------------------------------+------------------------------+--------------------+
-| Géospatial                        | GeoPandas, Shapely,          | sf, terra          |
-|                                   | Rasterio                     |                    |
+| Géospatial                        | GeoPandas, Shapely,          | sf, terra,         |
+|                                   | Rasterio, PySal              | spdep, gstat       |
 +-----------------------------------+------------------------------+--------------------+
 | Web scraping                      | BeautifoulSoup4, Selenium,   | Rselenium, Rvest   |
 |                                   | Scrapy                       |                    |
 +-----------------------------------+------------------------------+--------------------+
-| Traitement automatisé de la       | Spacy, NLTK                  | Spacyr, NLP        |
-| langue                            |                              |                    |
+| Traitement automatisé de la       | Spacy, NLTK                  | Spacyr, NLP,       |
+| langue                            |                              | Tidytext           |
 +-----------------------------------+------------------------------+--------------------+
-| Programmation lettrée             | Jupyter notebooks, Quarto    | Rmarkdown, Quarto  |
+| Programmation lettrée             | Jupyter notebook, Quarto     | Rmarkdown, Quarto  |
 +-----------------------------------+------------------------------+--------------------+
 
 :::
 
 ## Pour résumer...
 
-<br>
+:::{.medium}
 
 - Deux écosystèmes très actifs pour être à jour (ou à la pointe) dans les différents domaines scientifiques
 
-- De nombreuses bibliothèques sont disponibles dans les deux langages (Selenium, Tesseract, Spacy)
+- De nombreuses bibliothèques sont disponibles dans les deux langages (Selenium, Bokeh, Plotly, Tesseract, Spacy, etc.)
 
-- La possibilité d'utiliser R depuis Python et Python depuis R
+- La possibilité d'utiliser :
+  - R depuis Python ([RPy2](https://rpy2.github.io/))
+  - Python depuis R ([Reticulate](https://rstudio.github.io/reticulate/))
 
+- Interopérabilité avec d'autres langages
+  - R : [C/C++](https://www.rcpp.org/), [Java](https://rforge.net/rJava/), etc.
+  - Python : C/C++ (plusieurs solutions), [Java](https://pyjnius.readthedocs.io/en/stable/), [Rust](https://pyo3.rs/), etc.
+:::
 
 # Valoriser ses résultats
 
@@ -1258,13 +1469,24 @@ Plusieurs manières de valoriser les scripts écrits dans les deux langages ains
 
 - Les deux langages ont en commun une partie de l'écosystème :
 
-  * Rmarkdown (pour R mais permet d'utiliser Python)
+  * [**R markdown**](https://rmarkdown.rstudio.com/) (pour R mais permet d'utiliser Python)
 
-  * Jupyter notebooks (initalement pour Python mais permet d'utiliser R)
+  * [**Jupyter notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) (pour Python mais permet d'utiliser R)
 
-  * Quarto (permet d'utiliser R et Python - utilisé pour cette présentation)
+  * [**Quarto**](https://quarto.org/) (permet d'utiliser R et Python - utilisé pour cette présentation)
 
 ## Quarto
+
+<div class="center">
+<img src="images/logo-quarto.png" style="width:500px;"/>
+</div>
+
+- [**Quarto**](https://quarto.org/) : *"An open-source scientific and technical publishing system"* (R, Python, Julia, Observable JavaScript)
+
+- Principe de la **programmation lettrée** (*litterate programming*)
+
+- Pour préparer différents types de documents (page HTML, slides, PDF, document Word, etc.)
+
 
 
 ## Example Interopérabilité R / Python avec Quarto
@@ -1278,7 +1500,9 @@ Load the data from the [#TidyTuesday](https://github.com/rfordatascience/tidytue
 #| echo: true
 #| message: false
 #| cache: true
-lemurs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-24/lemur_data.csv')
+lemurs <- readr::read_csv(
+  'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-24/lemur_data.csv'
+)
 ```
 
 ## Example Interopérabilité R / Python avec Quarto
@@ -1358,13 +1582,14 @@ ggplot(data = lemur_residuals,
 
 - R : [**Shiny**](https://shiny.posit.co/) (aussi pour [Python](https://shiny.rstudio.com/py/docs/overview.html))
 
-- Python : [**Bokeh** (et *Bokeh Server*)](https://docs.bokeh.org/en/latest/docs/user_guide/server.html)
+- Python : [**Bokeh** (et *Bokeh Server*)](https://docs.bokeh.org/en/latest/docs/user_guide/server.html), [**Dash**](https://dash.plotly.com/)
 
-- [Exemple d'application Shiny (R)](https://gallery.shinyapps.io/051-movie-explorer/) vs. [Exemple d'application Bokeh Server](https://demo.bokeh.org/movies)
+- [Exemple d'application Shiny (R)](https://gallery.shinyapps.io/051-movie-explorer/) vs. [Exemple d'application Bokeh Server](https://demo.bokeh.org/movies) vs. [Exemple d'application Dash](https://tracking-dashboard-app.herokuapp.com/dashboard)
 
 <br>
 
-- Python : [**Gradio**](https://www.gradio.app/) - *Build & share delightful machine learning apps* (...mais aussi des dashboards interactifs à la Shiny)
+- Python : [**Gradio**](https://www.gradio.app/) - *Build & share delightful machine learning apps*  
+  (...mais aussi des dashboards interactifs à la Shiny)
 
 
 ## Développement d'application Web
@@ -1441,6 +1666,8 @@ def update_item(item_id: int, item: Item):
 
 ## Développement d'application mobiles (Android / iOS)
 
+:::{.medium}
+
 - Même en SHS certains projets peuvent déboucher sur le développement d'une application mobile.
 
 - Ou alors pour vendre une application mobile sur le Google Play Store et gagner des millions...
@@ -1449,6 +1676,15 @@ En Python :
 
 - [Beeware](https://beeware.org/) - Applications multiplateformes (Windows, Linux, Mac OS, Android, iOS, Web)
 - [Kivy](https://kivy.org/doc/stable/guide/android.html) - Applications multiplateformes (Windows, Linux, Mac OS, Android, iOS)
+
+:::
+
+
+## Développement d'application mobiles (Android / iOS)
+
+<div class="center">
+<img src="images/beeware-app.png" style="width: 45%" />
+</div>
 
 
 # Programmer pour autre chose que la science des données, programmer dans d'autres environnements, etc.
@@ -1545,18 +1781,18 @@ ou de voir plus loin que l'exécution de scripts dédiés à l'analyse de donné
 +-----------------------------------+------------------------------+--------------------+
 | Élégance / syntaxe                | **Win**                      |                    |
 +-----------------------------------+------------------------------+--------------------+
-| OOP, metaprogramming              | **Win**                      |                    |
+| OOP, metaprogramming              | *Tie*                        | *Tie*              |
 +-----------------------------------+------------------------------+--------------------+
 | Packages additionnels             | *Tie*                        |  *Tie*             |
 +-----------------------------------+------------------------------+--------------------+
 | Documentation                     |                              |  **Win**           |
-| Packages additionnels             |                              |                    |
+| packages additionnels             |                              |                    |
 +-----------------------------------+------------------------------+--------------------+
-| Prix du ticket d'entrée           |                              |  Win (?)           |
+| Prix du ticket d'entrée           |                              |  **Win**           |
 +-----------------------------------+------------------------------+--------------------+
 | Learning curve                    |                              |  Win (?)           |
 +-----------------------------------+------------------------------+--------------------+
-| Web scraping                     | **Win**                      |                    |
+| Web scraping                      | **Win**                      |                    |
 +-----------------------------------+------------------------------+--------------------+
 | Statistique                       |                              |  **Win**           |
 +-----------------------------------+------------------------------+--------------------+
