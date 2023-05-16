@@ -1,0 +1,139 @@
+---
+title: "House Sales in King County"
+author: "Matthieu"
+date: "2023-05-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 0. Import des données
+
+- Les quelques bibliothèques qu'on va utiliser :
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+library(readr)
+library(dplyr)
+library(lubridate)
+library(ggplot2)
+```
+
+- Lecture du jeu de données :
+
+```{r}
+house_sales <- readr::read_csv('../static/home_data.csv', show_col_types = FALSE)
+```
+
+- À quoi ressemblent les données ?
+
+```{r}
+head(house_sales)
+```
+
+- Combien d'individus ?
+
+```{r}
+dim(house_sales)
+```
+
+- Quels sont les types qui ont été détectés automatiquement ?
+
+```{r}
+str(house_sales)
+```
+
+- On va convertir le champ `date` en un objet Date qui permettra les comparaisons et les champs `waterfront` et `grade` champs de type `factor` :
+
+```{r}
+house_sales <- house_sales %>%
+  mutate(date = as_date(date)) %>%
+  mutate(waterfront = as.factor(waterfront)) %>%
+  mutate(grade = as.factor(grade))
+```
+
+- On va convertir les champs `sq ft` en mètres carrés et supprimer les champs d'origine (avec `.keep="unused"`) :
+
+```{r}
+house_sales <- house_sales %>%
+  mutate(
+    sqm_above = sqft_above / 10.764,
+    sqm_living = sqft_living / 10.764,
+    sqm_lot = sqft_lot / 10.764,
+    sqm_basement = sqft_basement / 10.764,
+    sqm_living15 = sqft_living15 / 10.764,
+    sqm_lot15 = sqft_lot15 / 10.764,
+    .keep="unused"
+  )
+```
+
+## 1. Explorer les données
+
+- Quelle distribution des prix ?
+
+```{r pressure, echo=FALSE}
+ggplot(house_sales, aes(x=price)) + 
+ geom_histogram(aes(y=after_stat(density)), colour="black", fill="white", bins=200)+
+ geom_density(alpha=.2, fill="#FFee66")  +
+ labs(title = "Price Density of Houses in King's County") +
+ theme_light()
+```
+
+- Combien de maisons par nombre d'étages ?
+
+```{r}
+house_sales %>% count(floors)
+```
+
+
+
+```{r}
+ggplot(house_sales, aes(x = floors)) +
+  geom_bar() +
+  labs(title="House count by number of floors") +
+  theme_light()
+```
+
+- Comparer les prix des maisons avec vue sur le front de mer ou sans vue sur le front de mer :
+
+```{r}
+ggplot(house_sales, aes(waterfront, price)) +
+  geom_boxplot(width = 1) +
+  theme_light()
+```
+
+- Quelle distribution des prix au regard des notes données à chaque maisons ?
+
+```{r}
+ggplot(house_sales, aes(grade, price)) +
+  geom_boxplot(width = 1) +
+  labs(title="Price distribution across grade levels") +
+  theme_light()
+```
+
+
+- Corrélation par paires :
+
+
+```{r}
+library(corrr)
+
+correlate(house_sales)
+```
+
+## 2. Régression linéaire
+
+
+```{r}
+model <- lm('price ~ sqm_living', house_sales)
+summary(model)
+```
+
+```{r}
+ggplot(house_sales, aes(x=sqm_living, y=price)) +
+  geom_point() +
+  geom_smooth(method='lm', formula = "y ~ x")  +
+  labs(title="House price vs. sqm living") +
+  theme_light()
+```
