@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - Les quelques bibliothèques qu'on va utiliser :
 
-```{r}
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
 library(readr)
 library(dplyr)
 library(lubridate)
@@ -91,6 +91,7 @@ house_sales %>% count(floors)
 ```{r}
 ggplot(house_sales, aes(x = floors)) +
   geom_bar() +
+  labs(title="House count by number of floors") +
   theme_light()
 ```
 
@@ -110,10 +111,29 @@ ggplot(house_sales, aes(grade, price)) +
   labs(title="Price distribution across grade levels") +
   theme_light()
 ```
+
+
 - Corrélation par paires :
+
 
 ```{r}
 library(corrr)
 
 correlate(house_sales)
+```
+
+## 2. Régression linéaire
+
+
+```{r}
+model <- lm('price ~ sqm_living', house_sales)
+summary(model)
+```
+
+```{r}
+ggplot(house_sales, aes(x=sqm_living, y=price)) +
+  geom_point() +
+  geom_smooth(method='lm', formula = "y ~ x")  +
+  labs(title="House price vs. sqm living") +
+  theme_light()
 ```
