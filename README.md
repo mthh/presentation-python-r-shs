@@ -26,7 +26,9 @@ Au cours de cette présentation, un même jeu de données sera analysé à l'aid
 
 ## Support :open_file_folder:
 
-↪ [Voir le support en ligne](https://mthh.github.io/presentation-python-r-shs/).
+↪ [Voir le support en ligne](https://mthh.github.io/presentation-python-r-shs/)
+
+↪ [Une précédente présentation : "Introduction Python pour les utilisateurs de R" (04/04/2019)](https://mthh.github.io/RUSS_190404/)
 
 
 ## Licence :copyright:

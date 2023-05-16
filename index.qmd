@@ -2086,6 +2086,6 @@ Statistiques spatiales, algo spécifique à l'écologie, etc... R probablement
 <div style="text-align: center;">
 <img src="images/logo-python-vs-r.png" style="margin: auto; width: 600px; height: auto;" />
 <p>16 mai 2023</p>
-<p>Matthieu Viry</p>
+<p>Matthieu Viry - <a href="mailto:matthieu.viry@cnrs.fr">matthieu.viry@cnrs.fr</a></p>
 </div>
 
